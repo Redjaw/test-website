@@ -1,13 +1,7 @@
-<script setup lang="ts">
-const colorMode = useColorMode()
-
-const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
-
+<script setup>
 useHead({
   meta: [
-    { charset: 'utf-8' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { key: 'theme-color', name: 'theme-color', content: color }
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
     { rel: 'icon', href: '/favicon.ico' }
@@ -17,57 +11,68 @@ useHead({
   }
 })
 
+const title = 'Nuxt Starter Template'
+const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
+
 useSeoMeta({
-  titleTemplate: '%s - Nuxt SaaS template',
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/saas-light.png',
-  twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/saas-light.png',
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
+  twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
   twitterCard: 'summary_large_image'
 })
-
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
-  transform: data => data.find(item => item.path === '/docs')?.children || []
-})
-const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
-  server: false
-})
-
-const links = [{
-  label: 'Docs',
-  icon: 'i-lucide-book',
-  to: '/docs/getting-started'
-}, {
-  label: 'Pricing',
-  icon: 'i-lucide-credit-card',
-  to: '/pricing'
-}, {
-  label: 'Blog',
-  icon: 'i-lucide-pencil',
-  to: '/blog'
-}, {
-  label: 'Changelog',
-  icon: 'i-lucide-history',
-  to: '/changelog'
-}]
-
-provide('navigation', navigation)
 </script>
 
 <template>
   <UApp>
-    <NuxtLoadingIndicator />
+    <UHeader>
+      <template #left>
+        <NuxtLink to="/">
+          <AppLogo class="w-auto h-6 shrink-0" />
+        </NuxtLink>
 
-    <NuxtLayout>
+        <TemplateMenu />
+      </template>
+
+      <template #right>
+        <UColorModeButton />
+
+        <UButton
+          to="https://github.com/KnowageLabs/Knowage-Server"
+          target="_blank"
+          icon="i-simple-icons-github"
+          aria-label="GitHub"
+          color="neutral"
+          variant="ghost"
+        />
+      </template>
+    </UHeader>
+
+    <UMain>
       <NuxtPage />
-    </NuxtLayout>
+    </UMain>
 
-    <ClientOnly>
-      <LazyUContentSearch
-        :files="files"
-        shortcut="meta_k"
-        :navigation="navigation"
-        :links="links"
-        :fuse="{ resultLimit: 42 }"
-      />
-    </ClientOnly>
+    <USeparator icon="i-simple-icons-nuxtdotjs" />
+
+    <UFooter>
+      <template #left>
+        <p class="text-sm text-muted">
+          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+        </p>
+      </template>
+
+      <template #right>
+        <UButton
+          to="https://github.com/nuxt-ui-templates/starter"
+          target="_blank"
+          icon="i-simple-icons-github"
+          aria-label="GitHub"
+          color="neutral"
+          variant="ghost"
+        />
+      </template>
+    </UFooter>
   </UApp>
 </template>

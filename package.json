@@ -1,10 +1,9 @@
 {
-  "name": "app",
+  "name": "tempApp",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-  "generate": "nuxt generate",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -12,18 +11,13 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.75",
-    "@iconify-json/simple-icons": "^1.2.60",
-    "@nuxt/content": "^3.8.2",
-    "@nuxt/hints": "1.0.0-alpha.3",
-    "@nuxt/image": "^2.0.0",
+    "@iconify-json/lucide": "^1.2.74",
+    "@iconify-json/simple-icons": "^1.2.59",
+    "@nuxt/content": "3.9.0",
+    "@nuxt/image": "2.0.0",
     "@nuxt/ui": "^4.2.1",
-    "@standard-schema/spec": "^1.0.0",
-    "@vueuse/nuxt": "^13.9.0",
-    "better-sqlite3": "^12.4.6",
-    "nuxt": "^4.2.1",
-    "nuxt-og-image": "^5.1.12",
-    "zod": "^4.1.13"
+    "better-sqlite3": "^12.5.0",
+    "nuxt": "^4.2.1"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.10.0",

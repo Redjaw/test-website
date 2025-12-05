@@ -2,12 +2,9 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@nuxt/image',
     '@nuxt/ui',
     '@nuxt/content',
-    '@vueuse/nuxt',
-    'nuxt-og-image',
-    '@nuxt/hints'
+    '@nuxt/image'
   ],
 
   devtools: {
@@ -17,19 +14,10 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/docs': { redirect: '/docs/getting-started', prerender: false }
+    '/': { prerender: true }
   },
 
-  compatibilityDate: '2024-07-11',
-
-  nitro: {
-    prerender: {
-      routes: [
-        '/'
-      ],
-      crawlLinks: true
-    }
-  },
+  compatibilityDate: '2025-01-15',
 
   eslint: {
     config: {
