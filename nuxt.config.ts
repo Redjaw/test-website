@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/image'
   ],
   app: {
-    baseURL: '/test-website/'
+    baseURL: process.env.NUXT_APP_BASE_URL || '/'
   },
 
   devtools: {
