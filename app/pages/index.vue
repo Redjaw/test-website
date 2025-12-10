@@ -1,7 +1,7 @@
 <template>
   <div>
     <UPageHero
-      title="Knowage"
+      title="KNOWAGE"
       description="The Open Source Analytics and Business Intelligence Suite."
     />
 
