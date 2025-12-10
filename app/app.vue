@@ -23,6 +23,17 @@ useSeoMeta({
   twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
   twitterCard: 'summary_large_image'
 })
+
+const items = computed(() => [ {
+  label: 'Features',
+  to: '/features'
+}, {
+  label: 'Pricing',
+  to: '/pricing'
+}, {
+  label: 'About Us',
+  to: '/aboutus'
+}])
 </script>
 
 <template>
@@ -32,10 +43,13 @@ useSeoMeta({
         <NuxtLink to="/">
           <AppLogo class="w-auto h-6 shrink-0" />
         </NuxtLink>
-
+  
         <TemplateMenu />
       </template>
-
+<UNavigationMenu
+      :items="items"
+      variant="link"
+    />
       <template #right>
         <UColorModeButton />
 
@@ -65,7 +79,7 @@ useSeoMeta({
 
       <template #right>
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="https://github.com/KnowageLabs/Knowage-Server"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
