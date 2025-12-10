@@ -6,6 +6,9 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/image'
   ],
+  app: {
+    baseURL: '/test-website/'
+  },
 
   devtools: {
     enabled: true
