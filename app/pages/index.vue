@@ -92,7 +92,7 @@ const links = ref([
   },
   {
     label: 'Learn more',
-    to: '/docs/getting-started/theme/design-system',
+    to: '#',
     color: 'neutral',
     variant: 'subtle',
     trailingIcon: 'i-lucide-arrow-right',
