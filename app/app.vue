@@ -24,69 +24,15 @@ useSeoMeta({
   twitterCard: 'summary_large_image'
 })
 
-const items = computed(() => [ {
-  label: 'Features',
-  to: '/features'
-}, {
-  label: 'Pricing',
-  to: '/pricing'
-}, {
-  label: 'About Us',
-  to: '/aboutus'
-}])
+
 </script>
 
 <template>
   <UApp>
-    <UHeader>
-      <template #left>
-        <NuxtLink to="/">
-          <AppLogo class="w-auto h-6 shrink-0" />
-        </NuxtLink>
-  
-        <TemplateMenu />
-      </template>
-<UNavigationMenu
-      :items="items"
-      variant="link"
-    />
-      <template #right>
-        <UColorModeButton />
-
-        <UButton
-          to="https://github.com/KnowageLabs/Knowage-Server"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
-      </template>
-    </UHeader>
-
     <UMain>
-      <NuxtPage />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
     </UMain>
-
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
-
-    <UFooter>
-      <template #left>
-        <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
-        </p>
-      </template>
-
-      <template #right>
-        <UButton
-          to="https://github.com/KnowageLabs/Knowage-Server"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
-      </template>
-    </UFooter>
   </UApp>
 </template>

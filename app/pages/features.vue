@@ -1,3 +1,4 @@
 <template>
-    <div>Features</div>
-    </template>
+  <Screenshot3d/>
+</template>
+

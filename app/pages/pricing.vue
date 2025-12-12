@@ -34,11 +34,6 @@
 </script>
 
 <template>
-    <UPageHero
-      title="Pricing"
-    >
-
-    </UPageHero>
 
     <UContainer>
       <UPricingPlans scale>
