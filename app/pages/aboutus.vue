@@ -28,6 +28,15 @@ const salesSpecialist = [{ name: 'Stefano Vitelli', role: '' }]
 const solutionSpecialist = [{ name: 'Stefano Scamuzzo', role: '' }]
 
 const individualContributors = [
+  { name: 'Grazia Cazzin', company: 'Engineering Group', country: 'Italy', note: '' },
+  { name: 'Marco Libanori', company: 'Engineering Group', country: 'Italy', note: '' },
+  { name: 'Alberto Nale', company: 'Engineering Group', country: 'Italy', note: '' },
+  { name: 'Davide Zerbetto', company: 'Engineering Group', country: 'Italy', note: '' },
+  { name: 'Matteo Massarotto', company: 'Engineering Group', country: 'Italy', note: '' },
+  { name: 'Elena Marchisa', company: 'Engineering Group', country: 'Italy', note: '' },
+  { name: 'Alberto Ghedin', company: 'Engineering Group', country: 'Italy', note: '' },
+  { name: 'Vojislav Stanojevic', company: 'Engineering Group', country: 'Italy', note: '' },
+  { name: 'Marco Cortella', company: 'Engineering Group', country: 'Italy', note: '' },
   { name: 'Marco Battaglia', company: 'Quantyca', country: 'Italy', note: 'Development of GeoReport engine' },
   { name: 'Alessandra Cauli', company: 'Engineering Group', country: 'Italy', note: '' },
   { name: 'Charly Clairmont', company: 'Altic', country: 'France', note: '' },
