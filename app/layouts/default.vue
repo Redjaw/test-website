@@ -1,5 +1,6 @@
 <template>
   <div>
+    <AnnouncementBanner />
     <AppHeader />
     <UMain>
       <slot />
@@ -9,6 +10,7 @@
 </template>
 
 <script setup lang="ts">
+// AnnouncementBanner is placed in app/components and auto-registered by Nuxt
 const config = useRuntimeConfig()
 const siteUrl = String(config.public?.siteUrl || '/').replace(/\/$/, '')
 // Use the background image the user mentioned
