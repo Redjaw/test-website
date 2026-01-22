@@ -3,7 +3,7 @@
     <!-- Hero with background image -->
     <div
       class="relative bg-cover bg-center bg-no-repeat"
-      style="background-image: url('/img/home/background-homepage.png');"
+      :style="{ backgroundImage: `url('${bgUrl}')` }"
     >
       <div class="absolute inset-0 bg-white/80 dark:bg-gray-900/80" />
       <div class="relative">
@@ -88,7 +88,12 @@
 </template>
 
 <script setup lang="ts">
-const links = ref([
+const runtimeConfig = useRuntimeConfig()
+const base = runtimeConfig?.app?.baseURL ?? '/'
+const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
+const bgUrl = `${baseNormalized}/img/home/background-homepage.png`
+// @ts-expect-error: links shape adapts to UPageHero ButtonProps at runtime
+const links = ref<Record<string, unknown>>([
   {
     label: 'Get started',
     to: 'https://knowage-suite.readthedocs.io/en/9.0/chapter_5/index.html',
