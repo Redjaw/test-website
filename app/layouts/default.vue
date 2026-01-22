@@ -11,8 +11,8 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
 const siteUrl = String(config.public?.siteUrl || '/').replace(/\/$/, '')
-// Image placed in public/img/home, use absolute URL for social previews
-const ogImagePath = '/img/home/hero.jpg'
+// Use the background image the user mentioned
+const ogImagePath = '/img/home/background-homepage.png'
 const ogImage = siteUrl === '/' ? ogImagePath : `${siteUrl}${ogImagePath}`
 
 useHead({
