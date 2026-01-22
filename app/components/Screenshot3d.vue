@@ -81,6 +81,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
+// Provide an explicit multi-word component name so the linter is satisfied
+defineOptions({ name: 'UiScreenshot3d' })
+
 const runtimeConfig = useRuntimeConfig()
 const base = runtimeConfig?.app?.baseURL ?? '/'
 const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
@@ -101,7 +104,7 @@ const images = [
 const groups = computed(() => {
   const g: string[][] = [[], [], [], []]
   images.forEach((img, i) => {
-    g[i % 4].push(img)
+    g[i % 4]!.push(img)
   })
   return g
 })
