@@ -22,7 +22,7 @@
       orientation="horizontal"
     >
       <img
-        src="/img/home/open&custom.jpg"
+        :src="`${baseNormalized}/img/home/open&custom.jpg`"
         alt="Illustration"
         class="w-full rounded-lg"
       >
@@ -35,7 +35,7 @@
       reverse
     >
       <img
-        src="/img/home/editions.jpg"
+        :src="`${baseNormalized}/img/home/editions.jpg`"
         alt="Illustration"
         class="w-full rounded-lg"
       >

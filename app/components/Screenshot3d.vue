@@ -13,12 +13,12 @@
       <img
         v-for="(img, idx) in groups[0]"
         :key="`g0-${idx}`"
-        :src="`/img/showcase/${img}`"
+        :src="`${baseNormalized}/img/showcase/${img}`"
         width="460"
         height="258"
         :alt="`Showcase ${img}`"
         class="aspect-video border border-default rounded-lg bg-white"
-      />
+      >
     </UMarquee>
 
     <UMarquee
@@ -31,12 +31,12 @@
       <img
         v-for="(img, idx) in groups[1]"
         :key="`g1-${idx}`"
-        :src="`/img/showcase/${img}`"
+        :src="`${baseNormalized}/img/showcase/${img}`"
         width="460"
         height="258"
         :alt="`Showcase ${img}`"
         class="aspect-video border border-default rounded-lg bg-white"
-      />
+      >
     </UMarquee>
 
     <UMarquee
@@ -50,12 +50,12 @@
       <img
         v-for="(img, idx) in groups[2]"
         :key="`g2-${idx}`"
-        :src="`/img/showcase/${img}`"
+        :src="`${baseNormalized}/img/showcase/${img}`"
         width="460"
         height="258"
         :alt="`Showcase ${img}`"
         class="aspect-video border border-default rounded-lg bg-white"
-      />
+      >
     </UMarquee>
 
     <UMarquee
@@ -68,18 +68,22 @@
       <img
         v-for="(img, idx) in groups[3]"
         :key="`g3-${idx}`"
-        :src="`/img/showcase/${img}`"
+        :src="`${baseNormalized}/img/showcase/${img}`"
         width="460"
         height="258"
         :alt="`Showcase ${img}`"
         class="aspect-video border border-default rounded-lg bg-white"
-      />
+      >
     </UMarquee>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
+
+const runtimeConfig = useRuntimeConfig()
+const base = runtimeConfig?.app?.baseURL ?? '/'
+const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
 
 // Images present in public/img/showcase
 // Keep the order as desired; this list was taken from the repository directory

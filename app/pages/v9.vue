@@ -82,7 +82,7 @@
             <div class="bg-black rounded-lg overflow-hidden shadow-lg text-white">
               <div class="relative">
                 <img
-                  src="/img/v9/rocket.png"
+                  :src="`${baseNormalized}/img/v9/rocket.png`"
                   alt="Rocket"
                   class="w-full h-64 object-cover"
                 >
@@ -187,6 +187,10 @@ import { onMounted, nextTick, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
+
+const config = useRuntimeConfig()
+const base = config?.app?.baseURL ?? '/'
+const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
 
 function scrollToHash(hash: string | undefined) {
   if (!hash) return

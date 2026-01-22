@@ -15,7 +15,11 @@ const config = useRuntimeConfig()
 const siteUrl = String(config.public?.siteUrl || '/').replace(/\/$/, '')
 // Use the background image the user mentioned
 const ogImagePath = '/img/home/background-homepage.png'
-const ogImage = siteUrl === '/' ? ogImagePath : `${siteUrl}${ogImagePath}`
+// If siteUrl is an absolute URL (https://...), use it; otherwise use app.baseURL
+const base = config?.app?.baseURL ?? '/'
+const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
+// prefer absolute siteUrl when configured, fall back to app base
+const ogImage = siteUrl && siteUrl !== '/' && siteUrl.startsWith('http') ? `${siteUrl}${ogImagePath}` : `${baseNormalized}${ogImagePath}`
 
 useHead({
   title: 'Knowage — Knowage Labs',

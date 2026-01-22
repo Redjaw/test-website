@@ -1,4 +1,8 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const base = config?.app?.baseURL ?? '/'
+const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
+
 const successStories = [
   {
     name: 'Pagoda',
@@ -6,7 +10,7 @@ const successStories = [
     icon: 'i-lucide-building',
     sector: 'Enterprise',
     description: 'Enterprise-wide business intelligence implementation.',
-    image: '/img/showcase/enterprise.jpg'
+    image: `${baseNormalized}/img/showcase/enterprise.jpg`
   },
   {
     name: 'ASL Foggia',
@@ -14,7 +18,7 @@ const successStories = [
     icon: 'i-lucide-hospital',
     sector: 'Healthcare',
     description: 'Advanced healthcare analytics for patient care optimization and resource management.',
-    image: '/img/showcase/healthcare.jpg'
+    image: `${baseNormalized}/img/showcase/healthcare.jpg`
   },
   {
     name: 'Emilia-Romagna Regional Labor Agency',
@@ -22,7 +26,7 @@ const successStories = [
     icon: 'i-lucide-briefcase',
     sector: 'Public Administration',
     description: 'Labor market analytics for employment trends and workforce planning.',
-    image: '/img/showcase/public.jpg'
+    image: `${baseNormalized}/img/showcase/public.jpg`
   },
   {
     name: 'Confcommercio',
@@ -30,7 +34,7 @@ const successStories = [
     icon: 'i-lucide-store',
     sector: 'Commerce',
     description: 'Retail analytics for regional commerce associations.',
-    image: '/img/showcase/commerce.jpg'
+    image: `${baseNormalized}/img/showcase/commerce.jpg`
   },
   {
     name: 'Fiat Research Center',
@@ -38,7 +42,7 @@ const successStories = [
     icon: 'i-lucide-car',
     sector: 'Automotive',
     description: 'R&D analytics for automotive innovation and product development.',
-    image: '/img/showcase/automotive.jpg'
+    image: `${baseNormalized}/img/showcase/automotive.jpg`
   },
   {
     name: 'Modena Local Public Health Authority',
@@ -46,7 +50,7 @@ const successStories = [
     icon: 'i-lucide-heart-pulse',
     sector: 'Healthcare',
     description: 'Public health monitoring and epidemiological analysis.',
-    image: '/img/showcase/health.jpg'
+    image: `${baseNormalized}/img/showcase/health.jpg`
   },
   {
     name: 'ENAV',
@@ -54,7 +58,7 @@ const successStories = [
     icon: 'i-lucide-plane',
     sector: 'Aviation',
     description: 'Air traffic management analytics and operational dashboards.',
-    image: '/img/showcase/aviation.jpg'
+    image: `${baseNormalized}/img/showcase/aviation.jpg`
   },
   {
     name: 'COVID-19 DataViz and Analysis',
@@ -62,7 +66,7 @@ const successStories = [
     icon: 'i-lucide-activity',
     sector: 'Research',
     description: 'Pandemic data visualization and epidemiological tracking.',
-    image: '/img/showcase/research.jpg'
+    image: `${baseNormalized}/img/showcase/research.jpg`
   }
 ]
 
