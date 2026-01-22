@@ -11,22 +11,16 @@
       }"
     >
       <img
-        v-for="i in 4"
-        :key="i"
-        :src="`/blocks/image${i}.png`"
+        v-for="(img, idx) in groups[0]"
+        :key="`g0-${idx}`"
+        :src="`/img/showcase/${img}`"
         width="460"
         height="258"
-        :alt="`Nuxt UI Screenshot ${i}`"
+        :alt="`Showcase ${img}`"
         class="aspect-video border border-default rounded-lg bg-white"
-      >
-      <img
-        src="/img/showcase/airbnb-analysis.png"
-        width="460"
-        height="258"
-        alt="Airbnb Analysis Dashboard"
-        class="aspect-video border border-default rounded-lg bg-white"
-      >
+      />
     </UMarquee>
+
     <UMarquee
       orientation="vertical"
       :overlay="false"
@@ -35,15 +29,16 @@
       }"
     >
       <img
-        v-for="i in [5, 6, 7, 8]"
-        :key="i"
-        :src="`/blocks/image${i}.png`"
+        v-for="(img, idx) in groups[1]"
+        :key="`g1-${idx}`"
+        :src="`/img/showcase/${img}`"
         width="460"
         height="258"
-        :alt="`Nuxt UI Screenshot ${i}`"
+        :alt="`Showcase ${img}`"
         class="aspect-video border border-default rounded-lg bg-white"
-      >
+      />
     </UMarquee>
+
     <UMarquee
       reverse
       orientation="vertical"
@@ -53,15 +48,16 @@
       }"
     >
       <img
-        v-for="i in [9, 10, 11, 12]"
-        :key="i"
-        :src="`/blocks/image${i}.png`"
+        v-for="(img, idx) in groups[2]"
+        :key="`g2-${idx}`"
+        :src="`/img/showcase/${img}`"
         width="460"
         height="258"
-        :alt="`Nuxt UI Screenshot ${i}`"
+        :alt="`Showcase ${img}`"
         class="aspect-video border border-default rounded-lg bg-white"
-      >
+      />
     </UMarquee>
+
     <UMarquee
       orientation="vertical"
       :overlay="false"
@@ -70,14 +66,39 @@
       }"
     >
       <img
-        v-for="i in [5, 6, 7, 8]"
-        :key="i"
-        :src="`/blocks/image${i}.png`"
+        v-for="(img, idx) in groups[3]"
+        :key="`g3-${idx}`"
+        :src="`/img/showcase/${img}`"
         width="460"
         height="258"
-        :alt="`Nuxt UI Screenshot ${i}`"
+        :alt="`Showcase ${img}`"
         class="aspect-video border border-default rounded-lg bg-white"
-      >
+      />
     </UMarquee>
   </div>
 </template>
+
+<script setup lang="ts">
+import { computed } from 'vue'
+
+// Images present in public/img/showcase
+// Keep the order as desired; this list was taken from the repository directory
+const images = [
+  'airbnb-analysis.png',
+  'screenshot1.png',
+  'screenshot2.png',
+  'screenshot3.png',
+  'screenshot4.png',
+  'screenshot5.png',
+  'screenshot6.png'
+]
+
+// Distribute images evenly across 4 marquees
+const groups = computed(() => {
+  const g: string[][] = [[], [], [], []]
+  images.forEach((img, i) => {
+    g[i % 4].push(img)
+  })
+  return g
+})
+</script>
