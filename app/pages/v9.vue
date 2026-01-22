@@ -82,7 +82,7 @@
             <div class="bg-black rounded-lg overflow-hidden shadow-lg text-white">
               <div class="relative">
                 <img
-                  src="/img/v9/rocket.jpeg"
+                  src="/img/v9/rocket.png"
                   alt="Rocket"
                   class="w-full h-64 object-cover"
                 >
