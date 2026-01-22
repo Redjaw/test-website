@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const comparisonFeatures = [
+const allFeatures = [
   { name: 'AI Virtual Assistant', community: false, enterprise: true },
   { name: 'On line static Report (Birt & JasperReport)', community: true, enterprise: true },
   { name: 'On line Dashboard, with a base set of widgets', community: true, enterprise: true },
@@ -29,6 +29,12 @@ const comparisonFeatures = [
   { name: 'Resource Manager', community: false, enterprise: true },
   { name: 'News management', community: false, enterprise: true },
   { name: 'Multi-tenant management', community: false, enterprise: true }
+]
+
+// Place community features first, preserving their relative order
+const comparisonFeatures = [
+  ...allFeatures.filter(f => f.community),
+  ...allFeatures.filter(f => !f.community)
 ]
 </script>
 
