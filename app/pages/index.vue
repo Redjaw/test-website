@@ -119,7 +119,7 @@ const links = ref<HeroLink[]>([
   },
   {
     label: 'Release 9',
-    to: '/v9#launch-sequence',
+    to: '/v9',
     color: 'primary',
     icon: 'i-lucide-rocket'
   }
