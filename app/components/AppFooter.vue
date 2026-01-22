@@ -1,14 +1,10 @@
 <template>
-  <USeparator icon="i-simple-icons-nuxtdotjs" />
-
-  <UFooter>
-    <template #left>
+  <footer class="py-6 border-t border-gray-200 dark:border-gray-800">
+    <div class="container mx-auto px-4 flex items-center justify-between">
       <p class="text-sm text-muted">
         Knowage-Labs • © {{ new Date().getFullYear() }}
       </p>
-    </template>
 
-    <template #right>
       <UButton
         to="https://github.com/KnowageLabs/Knowage-Server"
         target="_blank"
@@ -17,6 +13,6 @@
         color="neutral"
         variant="ghost"
       />
-    </template>
-  </UFooter>
+    </div>
+  </footer>
 </template>
