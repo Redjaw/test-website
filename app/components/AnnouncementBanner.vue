@@ -2,6 +2,8 @@
   <div
     v-if="visible"
     class="bg-gradient-to-r from-primary-600 to-primary-500 text-white"
+    role="region"
+    aria-label="Knowage 9 announcement"
   >
     <div class="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
       <div class="flex items-center gap-3">
@@ -84,5 +86,5 @@ function dismiss() {
 </script>
 
 <style scoped>
-/* subtle gradient tweak */
+/* restored to primary gradient style */
 </style>

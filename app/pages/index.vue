@@ -11,7 +11,7 @@
           title="KNOWAGE"
           description="KNOWAGE is the most comprehensive open source Business Intelligence suite for data analytics. Designed to meet both traditional and innovative requirements of complex data domains."
           headline="New release 9.0"
-          :links="links"
+          :links="links as any"
         />
       </div>
     </div>
@@ -88,12 +88,23 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
+type HeroLink = {
+  label: string
+  to: string
+  icon?: string
+  color?: string
+  variant?: string
+  trailingIcon?: string
+}
+
 const runtimeConfig = useRuntimeConfig()
 const base = runtimeConfig?.app?.baseURL ?? '/'
 const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
 const bgUrl = `${baseNormalized}/img/home/background-homepage.png`
-// @ts-expect-error: links shape adapts to UPageHero ButtonProps at runtime
-const links = ref<Record<string, unknown>>([
+// links typed as HeroLink[] to match UPageHero expected shape at runtime
+const links = ref<HeroLink[]>([
   {
     label: 'Get started',
     to: 'https://knowage-suite.readthedocs.io/en/9.0/chapter_5/index.html',
@@ -105,6 +116,12 @@ const links = ref<Record<string, unknown>>([
     color: 'neutral',
     variant: 'subtle',
     trailingIcon: 'i-lucide-arrow-right'
+  },
+  {
+    label: 'Release 9',
+    to: '/v9#launch-sequence',
+    color: 'primary',
+    icon: 'i-lucide-rocket'
   }
 ])
 </script>

@@ -97,7 +97,7 @@
                     </p>
                     <div class="mt-4 flex items-center justify-center gap-3">
                       <UButton
-                        to="/v9#comparison"
+                        to="#launch-sequence"
                         class="bg-red-600"
                         label="Launch Sequence"
                       />
@@ -131,5 +131,77 @@
         </div>
       </div>
     </UPageSection>
+
+    <!-- Launch Sequence section: target for the Launch Sequence CTA -->
+    <UPageSection
+      id="launch-sequence"
+      title="Launch Sequence"
+      description="Follow the checklist to get Knowage 9 fully operational."
+    >
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-4 bg-white/5 rounded-lg">
+          <h4 class="font-semibold mb-2">
+            1. Pre-flight checks
+          </h4>
+          <p class="text-sm text-gray-300">
+            Verify configurations, data connectors and permissions.
+          </p>
+        </div>
+        <div class="p-4 bg-white/5 rounded-lg">
+          <h4 class="font-semibold mb-2">
+            2. Engine tuning
+          </h4>
+          <p class="text-sm text-gray-300">
+            Apply performance settings and verify query plans.
+          </p>
+        </div>
+        <div class="p-4 bg-white/5 rounded-lg">
+          <h4 class="font-semibold mb-2">
+            3. Lift-off
+          </h4>
+          <p class="text-sm text-gray-300">
+            Roll out to production and monitor the telemetry dashboards.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6 flex gap-3">
+        <UButton
+          to="/editions#comparison"
+          label="Compare Editions"
+        />
+        <UButton
+          to="https://github.com/KnowageLabs/Knowage-Server/releases"
+          target="_blank"
+          variant="subtle"
+          color="neutral"
+          label="View Releases"
+        />
+      </div>
+    </UPageSection>
   </div>
 </template>
+
+<script setup lang="ts">
+import { onMounted, nextTick, watch } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+function scrollToHash(hash: string | undefined) {
+  if (!hash) return
+  const id = hash.replace(/^#/, '')
+  nextTick(() => {
+    const el = document.getElementById(id)
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  })
+}
+
+onMounted(() => {
+  scrollToHash(route.hash)
+})
+
+watch(() => route.hash, (h) => {
+  scrollToHash(h)
+})
+</script>
