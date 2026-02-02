@@ -13,7 +13,7 @@
       <img
         v-for="(img, idx) in groups[0]"
         :key="`g0-${idx}`"
-        :src="`${baseNormalized}/img/showcase/${img}`"
+        :src="toShowcaseSrc(img)"
         width="460"
         height="258"
         :alt="`Showcase ${img}`"
@@ -31,7 +31,7 @@
       <img
         v-for="(img, idx) in groups[1]"
         :key="`g1-${idx}`"
-        :src="`${baseNormalized}/img/showcase/${img}`"
+        :src="toShowcaseSrc(img)"
         width="460"
         height="258"
         :alt="`Showcase ${img}`"
@@ -50,7 +50,7 @@
       <img
         v-for="(img, idx) in groups[2]"
         :key="`g2-${idx}`"
-        :src="`${baseNormalized}/img/showcase/${img}`"
+        :src="toShowcaseSrc(img)"
         width="460"
         height="258"
         :alt="`Showcase ${img}`"
@@ -68,7 +68,7 @@
       <img
         v-for="(img, idx) in groups[3]"
         :key="`g3-${idx}`"
-        :src="`${baseNormalized}/img/showcase/${img}`"
+        :src="toShowcaseSrc(img)"
         width="460"
         height="258"
         :alt="`Showcase ${img}`"
@@ -88,10 +88,20 @@ const runtimeConfig = useRuntimeConfig()
 const base = runtimeConfig?.app?.baseURL ?? '/'
 const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
 
+const toShowcaseSrc = (filename: string) => {
+  // Encode only the filename segment (handles spaces and parentheses)
+  return `${baseNormalized}/img/showcase/${encodeURIComponent(filename)}`
+}
+
 // Images present in public/img/showcase
 // Keep the order as desired; this list was taken from the repository directory
 const images = [
   'airbnb-analysis.png',
+  'immagine.jpg',
+  'immagine.png',
+  'immagine (1).png',
+  'immagine (2).png',
+  'immagine (3).png',
   'screenshot1.png',
   'screenshot2.png',
   'screenshot3.png',
