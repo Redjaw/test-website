@@ -13,6 +13,28 @@ const mainFeatures = [
     ]
   },
   {
+    id: 'assistant',
+    icon: 'i-lucide-bot',
+    title: 'Virtual Assistant',
+    description: 'An intelligent, conversational interface designed to help users interact seamlessly with the KNOWAGE suite.',
+    details: [
+      'Real-time support by answering questions',
+      'Dashboard navigation assistance',
+      'Natural language processing for context-aware responses'
+    ]
+  },
+  {
+    id: 'dataviz',
+    icon: 'i-lucide-bar-chart-3',
+    title: 'Advanced Data Visualization',
+    description: 'Modern data analysis requires flexibility and openness to custom code.',
+    details: [
+      'Wide range of open widgets for advanced components',
+      'Use HTML, third-party libraries, or Python code',
+      'Rich gallery of pre-packaged widgets included'
+    ]
+  },
+  {
     id: 'reporting',
     icon: 'i-lucide-file-text',
     title: 'Reporting',
@@ -58,17 +80,6 @@ const mainFeatures = [
     ]
   },
   {
-    id: 'dataviz',
-    icon: 'i-lucide-bar-chart-3',
-    title: 'Advanced Data Visualization',
-    description: 'Modern data analysis requires flexibility and openness to custom code.',
-    details: [
-      'Wide range of open widgets for advanced components',
-      'Use HTML, third-party libraries, or Python code',
-      'Rich gallery of pre-packaged widgets included'
-    ]
-  },
-  {
     id: 'kpi',
     icon: 'i-lucide-gauge',
     title: 'Performance Management',
@@ -90,17 +101,6 @@ const mainFeatures = [
       'Bi-modal approach and fast prototyping practices'
     ]
   },
-  {
-    id: 'assistant',
-    icon: 'i-lucide-bot',
-    title: 'Virtual Assistant',
-    description: 'An intelligent, conversational interface designed to help users interact seamlessly with the KNOWAGE suite.',
-    details: [
-      'Real-time support by answering questions',
-      'Dashboard navigation assistance',
-      'Natural language processing for context-aware responses'
-    ]
-  }
 ]
 </script>
 
@@ -116,112 +116,100 @@ const mainFeatures = [
       v-for="(feature, index) in mainFeatures"
       :key="feature.id"
     >
-      <UPageSection
-        :id="feature.id"
-        :title="feature.title"
-        :description="feature.description"
-        orientation="horizontal"
-        :reverse="index % 2 === 1"
-        :ui="{ container: 'py-8 sm:py-10' }"
-      >
-        <UCard :ui="{ body: 'p-5' }">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg">
-              <UIcon
-                :name="feature.icon"
-                class="w-7 h-7 text-primary-600 dark:text-primary-400"
-              />
+      <!-- First 3 features: two-column layout (50/50) with alternating order -->
+      <template v-if="index < 3">
+        <UPageSection
+          :id="feature.id"
+          :ui="{ container: 'py-8 sm:py-10' }"
+        >
+          <div :class="['grid grid-cols-2 gap-8', index % 2 === 1 && 'grid-cols-reverse']">
+            <!-- Content column: title, description, details -->
+            <div :class="{ 'order-2': index % 2 === 1 }">
+              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                {{ feature.title }}
+              </h2>
+              <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                {{ feature.description }}
+              </p>
+              <div>
+                <div class="flex items-center gap-3 mb-4">
+                  <div class="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg">
+                    <UIcon
+                      :name="feature.icon"
+                      class="w-7 h-7 text-primary-600 dark:text-primary-400"
+                    />
+                  </div>
+                  <h3 class="text-xl font-semibold">
+                    Key Capabilities
+                  </h3>
+                </div>
+                <ul class="space-y-2">
+                  <li
+                    v-for="detail in feature.details"
+                    :key="detail"
+                    class="flex items-start gap-2"
+                  >
+                    <UIcon
+                      name="i-lucide-check"
+                      class="w-5 h-5 text-green-500 mt-0.5 shrink-0"
+                    />
+                    <span class="text-gray-600 dark:text-gray-300">{{ detail }}</span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <h3 class="text-xl font-semibold">
-              Key Capabilities
-            </h3>
+
+            <!-- Image column -->
+            <div class="flex items-center justify-center" :class="{ 'order-1': index % 2 === 1 }">
+              <div class="w-full h-96 bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center">
+                <slot :name="`image-${feature.id}`">
+                  <span class="text-gray-500 dark:text-gray-400">Image slot for {{ feature.title }}</span>
+                </slot>
+              </div>
+            </div>
           </div>
-          <ul class="space-y-2">
-            <li
-              v-for="detail in feature.details"
-              :key="detail"
-              class="flex items-start gap-2"
-            >
-              <UIcon
-                name="i-lucide-check"
-                class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"
-              />
-              <span class="text-gray-600 dark:text-gray-300">{{ detail }}</span>
-            </li>
-          </ul>
-        </UCard>
-      </UPageSection>
+        </UPageSection>
+      </template>
+
+      <!-- Other features: original layout -->
+      <template v-else>
+        <UPageSection
+          :id="feature.id"
+          :title="feature.title"
+          :description="feature.description"
+          orientation="horizontal"
+          :reverse="index % 2 === 1"
+          :ui="{ container: 'py-8 sm:py-10' }"
+        >
+          <UCard :ui="{ body: 'p-5' }">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg">
+                <UIcon
+                  :name="feature.icon"
+                  class="w-7 h-7 text-primary-600 dark:text-primary-400"
+                />
+              </div>
+              <h3 class="text-xl font-semibold">
+                Key Capabilities
+              </h3>
+            </div>
+            <ul class="space-y-2">
+              <li
+                v-for="detail in feature.details"
+                :key="detail"
+                class="flex items-start gap-2"
+              >
+                <UIcon
+                  name="i-lucide-check"
+                  class="w-5 h-5 text-green-500 mt-0.5 shrink-0"
+                />
+                <span class="text-gray-600 dark:text-gray-300">{{ detail }}</span>
+              </li>
+            </ul>
+          </UCard>
+        </UPageSection>
+      </template>
     </template>
-
-    <!-- Services Section -->
-    <UPageSection
-      id="services"
-      title="Consultancy Services"
-      description="Expert support to help you succeed with your Business Intelligence projects."
-      :ui="{ container: 'py-8 sm:py-10' }"
-    >
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <!-- Training -->
-        <UCard :ui="{ body: 'p-5' }">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
-              <UIcon
-                name="i-lucide-graduation-cap"
-                class="w-7 h-7 text-blue-600 dark:text-blue-400"
-              />
-            </div>
-            <h3 class="text-xl font-semibold">
-              Training
-            </h3>
-          </div>
-          <div class="space-y-3">
-            <p class="text-gray-600 dark:text-gray-300">
-              Our standard training provides basic and advanced knowledge on the entire range of analyses that can be performed with KNOWAGE.
-            </p>
-            <p class="text-gray-600 dark:text-gray-300">
-              Training alternates theory and hands-on sessions based on real use cases. All courses are provided with a certificate of completion.
-            </p>
-          </div>
-          <div class="flex items-center gap-2 text-sm text-gray-500 mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
-            <UIcon
-              name="i-lucide-award"
-              class="w-4 h-4"
-            />
-            <span>Certificate of completion included</span>
-          </div>
-        </UCard>
-
-        <!-- Consulting -->
-        <UCard :ui="{ body: 'p-5' }">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="p-3 bg-purple-100 dark:bg-purple-900 rounded-lg">
-              <UIcon
-                name="i-lucide-lightbulb"
-                class="w-7 h-7 text-purple-600 dark:text-purple-400"
-              />
-            </div>
-            <h3 class="text-xl font-semibold">
-              Consulting
-            </h3>
-          </div>
-          <div class="space-y-3">
-            <p class="text-gray-600 dark:text-gray-300">
-              Our consultancy services support you during the whole analytical process, from the first prototype to development, implementation, integration with other tools and periodic health checks.
-            </p>
-            <p class="text-gray-600 dark:text-gray-300 font-medium">
-              KNOWAGE services help you saving money and time while reaching your business goals.
-            </p>
-          </div>
-          <div class="flex items-center gap-2 text-sm text-gray-500 mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
-            <UIcon
-              name="i-lucide-check-circle"
-              class="w-4 h-4"
-            />
-            <span>Full project lifecycle support</span>
-          </div>
-        </UCard>
-      </div>
-    </UPageSection>
 
     <!-- CTA -->
     <UPageSection

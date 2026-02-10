@@ -10,7 +10,7 @@ const successStories = [
     icon: 'i-lucide-building',
     sector: 'Enterprise',
     description: 'Enterprise-wide business intelligence implementation.',
-    image: `${baseNormalized}/img/showcase/enterprise.jpg`
+    image: `${baseNormalized}/img/showcase/asimmetriade.png`
   },
   {
     name: 'ASL Foggia',
@@ -18,7 +18,7 @@ const successStories = [
     icon: 'i-lucide-hospital',
     sector: 'Healthcare',
     description: 'Advanced healthcare analytics for patient care optimization and resource management.',
-    image: `${baseNormalized}/img/showcase/healthcare.jpg`
+    image: `${baseNormalized}/img/showcase/cogs.png`
   },
   {
     name: 'Emilia-Romagna Regional Labor Agency',
@@ -26,7 +26,7 @@ const successStories = [
     icon: 'i-lucide-briefcase',
     sector: 'Public Administration',
     description: 'Labor market analytics for employment trends and workforce planning.',
-    image: `${baseNormalized}/img/showcase/public.jpg`
+    image: `${baseNormalized}/img/showcase/kidneys.png`
   },
   {
     name: 'Confcommercio',
@@ -34,7 +34,7 @@ const successStories = [
     icon: 'i-lucide-store',
     sector: 'Commerce',
     description: 'Retail analytics for regional commerce associations.',
-    image: `${baseNormalized}/img/showcase/commerce.jpg`
+    image: `${baseNormalized}/img/showcase/mimoide.png`
   },
   {
     name: 'Fiat Research Center',
@@ -42,7 +42,7 @@ const successStories = [
     icon: 'i-lucide-car',
     sector: 'Automotive',
     description: 'R&D analytics for automotive innovation and product development.',
-    image: `${baseNormalized}/img/showcase/automotive.jpg`
+    image: `${baseNormalized}/img/showcase/predator.png`
   },
   {
     name: 'Modena Local Public Health Authority',
@@ -50,7 +50,7 @@ const successStories = [
     icon: 'i-lucide-heart-pulse',
     sector: 'Healthcare',
     description: 'Public health monitoring and epidemiological analysis.',
-    image: `${baseNormalized}/img/showcase/health.jpg`
+    image: `${baseNormalized}/img/showcase/rings.png`
   },
   {
     name: 'ENAV',
@@ -58,7 +58,7 @@ const successStories = [
     icon: 'i-lucide-plane',
     sector: 'Aviation',
     description: 'Air traffic management analytics and operational dashboards.',
-    image: `${baseNormalized}/img/showcase/aviation.jpg`
+    image: `${baseNormalized}/img/showcase/simmetriade.png`
   },
   {
     name: 'COVID-19 DataViz and Analysis',
@@ -66,7 +66,7 @@ const successStories = [
     icon: 'i-lucide-activity',
     sector: 'Research',
     description: 'Pandemic data visualization and epidemiological tracking.',
-    image: `${baseNormalized}/img/showcase/research.jpg`
+    image: `${baseNormalized}/img/showcase/solaris.png`
   }
 ]
 
@@ -83,7 +83,7 @@ useSeoMeta({
     <!-- Hero Section with 3D Screenshots -->
     <div class="relative">
       <Screenshot3d />
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent " />
+      <div class="absolute inset-0 bg-linear-to-b from-transparent via-transparent " />
     </div>
 
     <UContainer>
