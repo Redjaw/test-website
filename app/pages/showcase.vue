@@ -1,8 +1,4 @@
 <script setup lang="ts">
-const config = useRuntimeConfig()
-const base = config?.app?.baseURL ?? '/'
-const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
-
 const successStories = [
   {
     name: 'Pagoda',
@@ -10,7 +6,7 @@ const successStories = [
     icon: 'i-lucide-building',
     sector: 'Enterprise',
     description: 'Enterprise-wide business intelligence implementation.',
-    image: `${baseNormalized}/img/showcase/asimmetriade.png`
+    image: '/img/showcase/asimmetriade.png'
   },
   {
     name: 'ASL Foggia',
@@ -18,7 +14,7 @@ const successStories = [
     icon: 'i-lucide-hospital',
     sector: 'Healthcare',
     description: 'Advanced healthcare analytics for patient care optimization and resource management.',
-    image: `${baseNormalized}/img/showcase/cogs.png`
+    image: '/img/showcase/cogs.png'
   },
   {
     name: 'Emilia-Romagna Regional Labor Agency',
@@ -26,7 +22,7 @@ const successStories = [
     icon: 'i-lucide-briefcase',
     sector: 'Public Administration',
     description: 'Labor market analytics for employment trends and workforce planning.',
-    image: `${baseNormalized}/img/showcase/kidneys.png`
+    image: '/img/showcase/kidneys.png'
   },
   {
     name: 'Confcommercio',
@@ -34,7 +30,7 @@ const successStories = [
     icon: 'i-lucide-store',
     sector: 'Commerce',
     description: 'Retail analytics for regional commerce associations.',
-    image: `${baseNormalized}/img/showcase/mimoide.png`
+    image: '/img/showcase/mimoide.png'
   },
   {
     name: 'Fiat Research Center',
@@ -42,7 +38,7 @@ const successStories = [
     icon: 'i-lucide-car',
     sector: 'Automotive',
     description: 'R&D analytics for automotive innovation and product development.',
-    image: `${baseNormalized}/img/showcase/predator.png`
+    image: '/img/showcase/predator.png'
   },
   {
     name: 'Modena Local Public Health Authority',
@@ -50,7 +46,7 @@ const successStories = [
     icon: 'i-lucide-heart-pulse',
     sector: 'Healthcare',
     description: 'Public health monitoring and epidemiological analysis.',
-    image: `${baseNormalized}/img/showcase/rings.png`
+    image: '/img/showcase/rings.png'
   },
   {
     name: 'ENAV',
@@ -58,7 +54,7 @@ const successStories = [
     icon: 'i-lucide-plane',
     sector: 'Aviation',
     description: 'Air traffic management analytics and operational dashboards.',
-    image: `${baseNormalized}/img/showcase/simmetriade.png`
+    image: '/img/showcase/simmetriade.png'
   },
   {
     name: 'COVID-19 DataViz and Analysis',
@@ -66,7 +62,7 @@ const successStories = [
     icon: 'i-lucide-activity',
     sector: 'Research',
     description: 'Pandemic data visualization and epidemiological tracking.',
-    image: `${baseNormalized}/img/showcase/solaris.png`
+    image: '/img/showcase/solaris.png'
   }
 ]
 
