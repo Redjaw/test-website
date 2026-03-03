@@ -96,7 +96,6 @@ useSeoMeta({
               :key="item.title"
               :title="item.title"
               :description="item.description"
-              :image="item.image"
               :badge="item.badge"
               :to="item.to"
               target="_blank"
@@ -104,6 +103,13 @@ useSeoMeta({
               variant="naked"
               :ui="{ description: 'line-clamp-3' }"
             >
+              <template #header>
+                <img
+                  :src="item.image"
+                  :alt="item.title"
+                  class="object-cover object-top w-full h-full"
+                >
+              </template>
               <template #date>
                 <div class="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
                   <UIcon name="i-lucide-map-pin" class="w-4 h-4" />
