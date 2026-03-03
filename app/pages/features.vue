@@ -5,7 +5,7 @@ const mainFeatures = [
     icon: 'i-lucide-layout-dashboard',
     title: 'Interactive Dashboards',
     description: 'A dashboard in Knowage transforms data into visual insights, enabling real-time monitoring, analysis, and strategic decision-making.',
-    image: '',
+    image: '/img/features/dashboard.png',
     details: [
       'Combine data from multiple sources and datasets into a unified analysis environment',
       'Wide range of widgets: charts, tables, pivot, text, images, filters, maps, and custom code',
@@ -18,7 +18,7 @@ const mainFeatures = [
     icon: 'i-lucide-bot',
     title: 'Virtual Assistant',
     description: 'An intelligent, conversational interface designed to help users interact seamlessly with the KNOWAGE suite.',
-    image: '',
+    image: '/img/features/assistant.png',
     details: [
       'Real-time support by answering questions',
       'Dashboard navigation assistance',
@@ -30,7 +30,7 @@ const mainFeatures = [
     icon: 'i-lucide-bar-chart-3',
     title: 'Advanced Data Visualization',
     description: 'Modern data analysis requires flexibility and openness to custom code.',
-    image: '',
+    image: '/img/features/forecast.png',
     details: [
       'Wide range of open widgets for advanced components',
       'Use HTML, third-party libraries, or Python code',
@@ -138,16 +138,16 @@ const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
       >
         <!-- Image -->
         <div class="w-full lg:w-1/2 shrink-0">
-          <div class="aspect-[16/9] rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800">
+          <div class="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800">
             <img
               v-if="feature.image"
               :src="`${baseNormalized}${feature.image}`"
               :alt="feature.title"
-              class="w-full h-full object-cover"
+              class="w-full h-auto"
             >
             <div
               v-else
-              class="w-full h-full bg-gradient-to-br from-primary-50 via-white to-primary-100 dark:from-gray-900 dark:via-primary-950 dark:to-gray-900 flex items-center justify-center"
+              class="aspect-[16/9] bg-gradient-to-br from-primary-50 via-white to-primary-100 dark:from-gray-900 dark:via-primary-950 dark:to-gray-900 flex items-center justify-center"
             >
               <UIcon :name="feature.icon" class="size-20 text-primary-200 dark:text-primary-800" />
             </div>

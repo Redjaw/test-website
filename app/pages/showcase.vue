@@ -105,7 +105,7 @@ useSeoMeta({
               target="_blank"
               orientation="vertical"
               variant="naked"
-              :ui="{ description: 'line-clamp-3' }"
+              :ui="{ description: 'line-clamp-3', body: 'pt-6 sm:pt-8' }"
             >
               <template #header>
                 <img
