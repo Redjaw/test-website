@@ -1,114 +1,113 @@
 <script setup lang="ts">
-const successStories = [
+const items = [
   {
-    name: 'Pagoda',
-    country: 'Europe',
-    icon: 'i-lucide-building',
-    sector: 'Enterprise',
-    description: 'Enterprise-wide business intelligence implementation.',
-    image: '/img/showcase/asimmetriade.png'
-  },
-  {
-    name: 'ASL Foggia',
+    title: 'Business Intelligence for Regional Employment Agencies',
+    description: 'The new Regional Labor Information System of Emilia-Romagna (SILER) supports Employment Centers in administrative management and in providing information and services to citizens and local businesses.',
+    image: 'https://www.eng.it/content/dam/eng-portal/stories/case_27-05-23_lavoro/STORIES_LAVORO.jpg',
+    badge: { label: 'Case Study', color: 'primary' },
     country: 'Italy',
-    icon: 'i-lucide-hospital',
-    sector: 'Healthcare',
-    description: 'Advanced healthcare analytics for patient care optimization and resource management.',
-    image: '/img/showcase/cogs.png'
+    to: 'https://www.eng.it/it/insights/stories/case-studies/business-intelligence-per-le-agenzie-di-lavoro-regionali-e-i-centri-per-impiego'
   },
   {
-    name: 'Emilia-Romagna Regional Labor Agency',
+    title: 'Business Intelligence for Entrepreneurship',
+    description: 'By connecting Knowage to its CRM, Confcommercio Umbria achieved better data visualization and analysis, and is now able to make confident, data-driven business decisions.',
+    image: 'https://s7g10.scene7.com/is/image/eng/STORIES_CONFCOMMERCIO-UMBRIA?bfc=on&fmt=webp-alpha&dpr=on,3&network=on',
+    badge: { label: 'Case Study', color: 'primary' },
     country: 'Italy',
-    icon: 'i-lucide-briefcase',
-    sector: 'Public Administration',
-    description: 'Labor market analytics for employment trends and workforce planning.',
-    image: '/img/showcase/kidneys.png'
+    to: 'https://www.eng.it/it/insights/stories/case-studies/la-business-intelligence-per-l-imprenditorialita'
   },
   {
-    name: 'Confcommercio',
-    country: 'Italy',
-    icon: 'i-lucide-store',
-    sector: 'Commerce',
-    description: 'Retail analytics for regional commerce associations.',
-    image: '/img/showcase/mimoide.png'
-  },
-  {
-    name: 'Fiat Research Center',
-    country: 'Italy',
-    icon: 'i-lucide-car',
-    sector: 'Automotive',
-    description: 'R&D analytics for automotive innovation and product development.',
-    image: '/img/showcase/predator.png'
-  },
-  {
-    name: 'Modena Local Public Health Authority',
-    country: 'Italy',
-    icon: 'i-lucide-heart-pulse',
-    sector: 'Healthcare',
-    description: 'Public health monitoring and epidemiological analysis.',
-    image: '/img/showcase/rings.png'
-  },
-  {
-    name: 'ENAV',
-    country: 'Italy',
-    icon: 'i-lucide-plane',
-    sector: 'Aviation',
-    description: 'Air traffic management analytics and operational dashboards.',
-    image: '/img/showcase/simmetriade.png'
-  },
-  {
-    name: 'COVID-19 DataViz and Analysis',
+    title: 'Atlas 4 Dev — The Atlas for Development',
+    description: 'A digital platform for consulting indicators representing the geographical, demographic, economic, sociocultural, environmental and institutional profile of every country in the world.',
+    image: 'https://s7g10.scene7.com/is/image/eng/image-landscape-100?bfc=on&fmt=webp-alpha&dpr=on,3&network=on',
+    badge: { label: 'Case Study', color: 'primary' },
     country: 'Global',
-    icon: 'i-lucide-activity',
-    sector: 'Research',
-    description: 'Pandemic data visualization and epidemiological tracking.',
-    image: '/img/showcase/solaris.png'
+    to: 'https://www.eng.it/it/insights/stories/case-studies/atlas4dev-atlante-per-lo-sviluppo'
+  },
+  {
+    title: 'Monitoring Sustainable Development Goals',
+    description: 'How to use Advanced Analytics to track progress on Sustainable Development Goals (SDGs) and connect them to business strategy or principles of good governance.',
+    image: 'https://www.eng.it/content/dam/eng-portal/stories/use_case_19-07-2023_goalsaggregator/STORIES_MONITORARE-SDG.jpg',
+    badge: { label: 'Use Case', color: 'success' },
+    country: 'Global',
+    to: 'https://www.eng.it/it/insights/stories/use-cases/monitorare-gli-obiettivi-di-sviluppo-sostenibile'
+  },
+  {
+    title: 'Dairy Sector: Precision Livestock Farming Goes Smart',
+    description: 'How precision livestock farming enables continuous monitoring of animal welfare and milk quality, turning farm data into actionable intelligence.',
+    image: 'https://s7g10.scene7.com/is/image/eng/Settore%20lattiero-caseario-%20la%20zootecnia%20diventa%20smart?bfc=on&fmt=webp-alpha&dpr=on,3&network=on',
+    badge: { label: 'Use Case', color: 'success' },
+    country: 'Italy',
+    to: 'https://www.eng.it/it/insights/stories/use-cases/settore-lattierocaseario-la-zootecnia-diventa-smart'
+  },
+  {
+    title: 'EW-SHOPP: Advanced Customer Journey',
+    description: 'A solution that integrates data from multiple sources through a new generation of business analytics, enabling a deeper understanding of the end-to-end customer journey.',
+    image: 'https://www.eng.it/content/dam/eng-portal/stories/ri_ewshopp_06-12-2019/ewshopp-advanced-customer-journey.jpg',
+    badge: { label: 'Research Project', color: 'info' },
+    country: 'Europe',
+    to: 'https://www.eng.it/it/insights/stories/research-projects/ewshopp-advanced-customer-journey'
+  },
+  {
+    title: 'DEMETER: Data Takes the Field for Smart Agriculture',
+    description: 'Innovative, interoperable IoT and Big Data platforms designed to support sustainable agricultural and food production systems at scale.',
+    image: 'https://s7g10.scene7.com/is/image/eng/Demeter?bfc=on&fmt=webp-alpha&dpr=on,3&network=on',
+    badge: { label: 'Research Project', color: 'info' },
+    country: 'Europe',
+    to: 'https://www.eng.it/it/insights/stories/research-projects/demeter-i-dati-scendono-in-campo-per-la-smart-agriculture'
+  },
+  {
+    title: 'Distributed Intelligence for Smart Cities',
+    description: 'BigClouT gives cities an analytical mind: leveraging IoT, cloud computing and big data to increase the efficiency of urban infrastructure, economic resources and environmental sustainability.',
+    image: 'https://s7g10.scene7.com/is/image/eng/Intelligenza%20distribuita%20per%20le%20Smart%20City?bfc=on&fmt=webp-alpha&dpr=on,3&network=on',
+    badge: { label: 'Research Project', color: 'info' },
+    country: 'Global',
+    to: 'https://www.eng.it/it/insights/stories/research-projects/intelligenza-distribuita-per-le-smart-city'
+  },
+  {
+    title: '5 Questions to… Massimiliano Ceceri',
+    description: 'An interview with Engineering\'s Data Visualization Senior Manager on the evolution of BI, the role of open source and the future of data-driven organizations.',
+    image: 'https://s7g10.scene7.com/is/image/eng/HERO_5-domande?bfc=on&fmt=webp-alpha&dpr=on,3&network=on',
+    badge: { label: 'Interview', color: 'warning' },
+    country: 'Italy',
+    to: 'https://www.eng.it/it/insights/cinque-domande-a/massimiliano-ceceri'
   }
 ]
 
 useSeoMeta({
   title: 'KNOWAGE Showcase',
   ogTitle: 'KNOWAGE Showcase',
-  description: 'Discover success stories and dashboards built with KNOWAGE',
-  ogDescription: 'Discover success stories and dashboards built with KNOWAGE'
+  description: 'Discover case studies, use cases and research projects built with KNOWAGE',
+  ogDescription: 'Discover case studies, use cases and research projects built with KNOWAGE'
 })
 </script>
 
 <template>
   <div>
-    <!-- Hero Section with 3D Screenshots -->
-    <div class="relative">
-      <Screenshot3d />
-      <div class="absolute inset-0 bg-linear-to-b from-transparent via-transparent " />
-    </div>
-
     <UContainer>
       <UPageBody>
         <UPageSection
-          title="Success Stories"
-          description="Discover how organizations across different sectors have leveraged KNOWAGE to transform their data into actionable insights."
+          title="Discover More About Knowage"
+          description="Explore real-world case studies, use cases and research projects that show how organizations across industries leverage Knowage to turn data into decisions."
         >
           <UBlogPosts>
             <UBlogPost
-              v-for="story in successStories"
-              :key="story.name"
-              :title="story.name"
-              :description="story.description"
-              :image="story.image"
-              :badge="{ label: story.sector, color: 'primary' }"
+              v-for="item in items"
+              :key="item.title"
+              :title="item.title"
+              :description="item.description"
+              :image="item.image"
+              :badge="item.badge"
+              :to="item.to"
+              target="_blank"
               orientation="vertical"
               variant="naked"
-              :ui="{
-                description: 'line-clamp-2'
-              }"
+              :ui="{ description: 'line-clamp-3' }"
             >
               <template #date>
                 <div class="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
-                  <UIcon
-                    name="i-lucide-map-pin"
-                    class="w-4 h-4"
-                  />
-                  <span>{{ story.country }}</span>
+                  <UIcon name="i-lucide-map-pin" class="w-4 h-4" />
+                  <span>{{ item.country }}</span>
                 </div>
               </template>
             </UBlogPost>

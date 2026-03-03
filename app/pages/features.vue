@@ -106,9 +106,15 @@ const mainFeatures = [
 
 <template>
   <div>
+    <div class="relative">
+      <Screenshot3d />
+      <div class="absolute inset-0 bg-linear-to-b from-transparent via-transparent" />
+    </div>
+
     <UPageHero
       title="Product Features"
       description="KNOWAGE provides a comprehensive set of analytical features to cover all modern Business Intelligence needs, from traditional reporting to advanced analytics and big data exploration."
+      :ui="{ container: 'flex flex-col lg:grid py-6 sm:py-8 lg:py-10 gap-16 sm:gap-y-24', title: 'text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted' }"
     />
 
     <!-- Feature Sections -->

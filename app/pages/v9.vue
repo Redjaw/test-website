@@ -3,6 +3,7 @@
     <UPageHero
       title="Knowage 9 — Major Release"
       description="A major step forward: redesigned UX, faster engines, enhanced integrations and more."
+      :ui="{ container: 'flex flex-col lg:grid py-6 sm:py-8 lg:py-10 gap-16 sm:gap-y-24', title: 'text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted' }"
     />
 
     <UPageSection class="py-12">

@@ -43,6 +43,7 @@ const comparisonFeatures = [
     <UPageHero
       title="KNOWAGE Editions"
       description="The suite is available in two versions. Choose the edition that best fits your requirements and start leveraging the power of data today."
+      :ui="{ container: 'flex flex-col lg:grid py-6 sm:py-8 lg:py-10 gap-16 sm:gap-y-24', title: 'text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted' }"
     />
 
     <UPageSection>

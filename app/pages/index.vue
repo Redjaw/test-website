@@ -9,7 +9,7 @@
       <div class="relative">
         <UPageHero
           title="KNOWAGE"
-          description="KNOWAGE is the most comprehensive open source Business Intelligence suite for data analytics. Designed to meet both traditional and innovative requirements of complex data domains."
+          description="The open source, secure and reliable solution for advanced data analytics and business intelligence. Aggregate data from heterogeneous systems, visualize insights on any device through charts, maps, KPIs and interactive dashboards — and make truly data-driven decisions."
           headline="New release 9.0"
           :links="links as any"
         />
@@ -18,7 +18,7 @@
 
     <UPageSection
       title="Open & Customizable"
-      description="KNOWAGE meets the standards of modern Business Intelligence solutions, providing a wide set of analytical features and a high level of customization to fit every business need. Thanks to its open-source nature and adoption of open standards, KNOWAGE can be used stand-alone or be seamlessly integrated into third-party applications."
+      description="KNOWAGE meets the standards of modern Business Intelligence, providing a wide set of analytical tools and a high level of customization. Its solid data governance ensures that data never leaves your organizational perimeter — with full security, traceability and access control. Thanks to its open-source nature, it can be used stand-alone or seamlessly integrated into third-party applications."
       orientation="horizontal"
     >
       <img
@@ -44,7 +44,7 @@
     <UPageSection
       id="features"
       title="Everything you need to build your Data Visualizations"
-      description="KNOWAGE provides a wide set of analytical features to cover all the modern Business Intelligence needs, from traditional reporting to advanced analytics and big data exploration."
+      description="KNOWAGE provides a comprehensive set of analytical capabilities — from traditional reporting to advanced analytics, big data exploration and AI-assisted insights — to cover every modern Business Intelligence need."
       :features="[
         {
           icon: 'material-symbols:devices-outline',
@@ -81,6 +81,24 @@
           title: 'Multitenant',
           description:
             'Activate different virtual instances to support multi-company, multi-department or multi-user scenarios.'
+        },
+        {
+          icon: 'material-symbols:robot-2-outline',
+          title: 'AI-Powered',
+          description:
+            'An AI virtual assistant guides users through data exploration, answers questions and makes advanced analytics accessible to everyone — regardless of technical skills.'
+        },
+        {
+          icon: 'material-symbols:security',
+          title: 'Data Security & Governance',
+          description:
+            'Solid governance ensures your data never leaves the organizational perimeter, with full security, traceability and granular access control.'
+        },
+        {
+          icon: 'i-lucide-code-2',
+          title: 'Open Source',
+          description:
+            'Fully open source and community-driven, Knowage gives you complete freedom to inspect, extend and contribute — with no vendor lock-in.'
         }
       ]"
     />
@@ -111,17 +129,17 @@ const links = ref<HeroLink[]>([
     icon: 'i-lucide-square-play'
   },
   {
+    label: 'Release 9',
+    to: '/v9',
+    color: 'primary',
+    icon: 'i-lucide-rocket'
+  },
+  {
     label: 'Learn more',
     to: '#',
     color: 'neutral',
     variant: 'subtle',
     trailingIcon: 'i-lucide-arrow-right'
-  },
-  {
-    label: 'Release 9',
-    to: '/v9',
-    color: 'primary',
-    icon: 'i-lucide-rocket'
   }
 ])
 </script>

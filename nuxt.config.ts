@@ -11,11 +11,15 @@ export default defineNuxtConfig({
     enabled: true
   },
 
+  devServer: {
+    host: '127.0.0.1'
+  },
+
   app: {
     baseURL: process?.env?.NUXT_APP_BASE_URL || '/'
   },
 
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css', 'leaflet/dist/leaflet.css'],
 
   // Public runtime config used at runtime (client + server)
   runtimeConfig: {
@@ -49,6 +53,6 @@ export default defineNuxtConfig({
   },
 
   image: {
-    domains: ['images.unsplash.com']
+    domains: ['images.unsplash.com', 'www.eng.it', 's7g10.scene7.com']
   }
 })
