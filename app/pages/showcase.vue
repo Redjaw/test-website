@@ -1,9 +1,13 @@
 <script setup lang="ts">
+const runtimeConfig = useRuntimeConfig()
+const base = runtimeConfig?.app?.baseURL ?? '/'
+const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
+
 const items = [
   {
     title: 'Business Intelligence for Regional Employment Agencies',
     description: 'The new Regional Labor Information System of Emilia-Romagna (SILER) supports Employment Centers in administrative management and in providing information and services to citizens and local businesses.',
-    image: '/img/showcase/STORIES_LAVORO.jpg',
+    image: `${baseNormalized}/img/showcase/STORIES_LAVORO.jpg`,
     badge: { label: 'Case Study', color: 'primary' },
     country: 'Italy',
     to: 'https://www.eng.it/it/insights/stories/case-studies/business-intelligence-per-le-agenzie-di-lavoro-regionali-e-i-centri-per-impiego'
@@ -27,7 +31,7 @@ const items = [
   {
     title: 'Monitoring Sustainable Development Goals',
     description: 'How to use Advanced Analytics to track progress on Sustainable Development Goals (SDGs) and connect them to business strategy or principles of good governance.',
-    image: '/img/showcase/STORIES_MONITORARE-SDG.jpg',
+    image: `${baseNormalized}/img/showcase/STORIES_MONITORARE-SDG.jpg`,
     badge: { label: 'Use Case', color: 'success' },
     country: 'Global',
     to: 'https://www.eng.it/it/insights/stories/use-cases/monitorare-gli-obiettivi-di-sviluppo-sostenibile'
@@ -43,7 +47,7 @@ const items = [
   {
     title: 'EW-SHOPP: Advanced Customer Journey',
     description: 'A solution that integrates data from multiple sources through a new generation of business analytics, enabling a deeper understanding of the end-to-end customer journey.',
-    image: '/img/showcase/ewshopp-advanced-customer-journey.jpg',
+    image: `${baseNormalized}/img/showcase/ewshopp-advanced-customer-journey.jpg`,
     badge: { label: 'Research Project', color: 'info' },
     country: 'Europe',
     to: 'https://www.eng.it/it/insights/stories/research-projects/ewshopp-advanced-customer-journey'
