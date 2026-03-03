@@ -45,68 +45,61 @@
       id="features"
       title="Everything you need to build your Data Visualizations"
       description="KNOWAGE provides a comprehensive set of analytical capabilities — from traditional reporting to advanced analytics, big data exploration and AI-assisted insights — to cover every modern Business Intelligence need."
-      :features="[
-        {
-          icon: 'material-symbols:devices-outline',
-          title: 'Any Platform',
-          description:
-            'Work on every Operating System, on premise or in the cloud. From desktop to mobile devices.'
-        },
-        {
-          icon: 'material-symbols:database',
-          title: 'Any Data',
-          description:
-            'Combine data coming from rbdms, big data, NoSql, open data, Solr indexes, flat files and external data services.'
-        },
-        {
-          icon: 'material-symbols:cloud',
-          title: 'Cloud Ready',
-          description:
-            'Usable in any Cloud environment in IaaS mode of find it in the major marketplaces.'
-        },
-        {
-          icon: 'material-symbols:dashboard-customize-outline',
-          title: 'Customizable',
-          description:
-            'Create the best solution according to your needs combining themes and analitical features.'
-        },
-        {
-          icon: 'material-symbols:person-pin-outline-sharp',
-          title: 'User Centric',
-          description:
-            'Build your analysis in autonomy, explore and organize your own data space thanks to advanced self-service features.'
-        },
-        {
-          icon: 'mdi:inbox-multiple',
-          title: 'Multitenant',
-          description:
-            'Activate different virtual instances to support multi-company, multi-department or multi-user scenarios.'
-        },
-        {
-          icon: 'material-symbols:robot-2-outline',
-          title: 'AI-Powered',
-          description:
-            'An AI virtual assistant guides users through data exploration, answers questions and makes advanced analytics accessible to everyone — regardless of technical skills.'
-        },
-        {
-          icon: 'material-symbols:security',
-          title: 'Data Security & Governance',
-          description:
-            'Solid governance ensures your data never leaves the organizational perimeter, with full security, traceability and granular access control.'
-        },
-        {
-          icon: 'i-lucide-code-2',
-          title: 'Open Source',
-          description:
-            'Fully open source and community-driven, Knowage gives you complete freedom to inspect, extend and contribute — with no vendor lock-in.'
-        }
-      ]"
+      :features="features"
     />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+
+const features = [
+  {
+    icon: 'material-symbols:devices-outline',
+    title: 'Any Platform',
+    description: 'Work on every Operating System, on premise or in the cloud. From desktop to mobile devices.'
+  },
+  {
+    icon: 'material-symbols:database',
+    title: 'Any Data',
+    description: 'Combine data coming from RDBMS, big data, NoSQL, open data, Solr indexes, flat files and external data services.'
+  },
+  {
+    icon: 'material-symbols:cloud',
+    title: 'Cloud Ready',
+    description: 'Usable in any Cloud environment in IaaS mode or find it in the major marketplaces.'
+  },
+  {
+    icon: 'material-symbols:dashboard-customize-outline',
+    title: 'Customizable',
+    description: 'Create the best solution according to your needs combining themes and analytical features.'
+  },
+  {
+    icon: 'material-symbols:person-pin-outline-sharp',
+    title: 'User Centric',
+    description: 'Build your analysis in autonomy, explore and organize your own data space thanks to advanced self-service features.'
+  },
+  {
+    icon: 'mdi:inbox-multiple',
+    title: 'Multitenant',
+    description: 'Activate different virtual instances to support multi-company, multi-department or multi-user scenarios.'
+  },
+  {
+    icon: 'material-symbols:robot-2-outline',
+    title: 'AI-Powered',
+    description: 'An AI virtual assistant guides users through data exploration, answers questions and makes advanced analytics accessible to everyone — regardless of technical skills.'
+  },
+  {
+    icon: 'material-symbols:security',
+    title: 'Data Security & Governance',
+    description: 'Solid governance ensures your data never leaves the organizational perimeter, with full security, traceability and granular access control.'
+  },
+  {
+    icon: 'i-lucide-code-2',
+    title: 'Open Source',
+    description: 'Fully open source and community-driven, Knowage gives you complete freedom to inspect, extend and contribute — with no vendor lock-in.'
+  }
+]
 
 type HeroLink = {
   label: string
@@ -136,7 +129,7 @@ const links = ref<HeroLink[]>([
   },
   {
     label: 'Learn more',
-    to: '#',
+    to: '/features',
     color: 'neutral',
     variant: 'subtle',
     trailingIcon: 'i-lucide-arrow-right'

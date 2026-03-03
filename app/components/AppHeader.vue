@@ -22,8 +22,8 @@ const items = computed(() => [
 <template>
   <UHeader>
     <template #left>
-      <NuxtLink to="/">
-        <AppLogo class="w-auto h-6 shrink-0" />
+      <NuxtLink to="/" aria-label="Knowage — Home">
+        <AppLogo class="w-auto h-6 shrink-0" aria-hidden="true" />
       </NuxtLink>
       <TemplateMenu />
     </template>
@@ -39,7 +39,7 @@ const items = computed(() => [
         to="https://github.com/KnowageLabs/Knowage-Server"
         target="_blank"
         icon="i-simple-icons-github"
-        aria-label="GitHub"
+        aria-label="GitHub (opens in new tab)"
         color="neutral"
         variant="ghost"
       />

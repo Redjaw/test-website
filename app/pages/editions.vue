@@ -90,6 +90,7 @@ const comparisonFeatures = [
                 target="_blank"
                 icon="i-simple-icons-github"
                 label="View on GitHub"
+                aria-label="View on GitHub (opens in new tab)"
               />
               <UButton
                 to="https://github.com/KnowageLabs/Knowage-Server/blob/master/CLA.md"
@@ -97,6 +98,7 @@ const comparisonFeatures = [
                 color="neutral"
                 variant="subtle"
                 label="Contributor License"
+                aria-label="Contributor License (opens in new tab)"
               />
             </div>
           </template>
@@ -156,13 +158,13 @@ const comparisonFeatures = [
           <table class="w-full">
             <thead>
               <tr class="border-b border-gray-200 dark:border-gray-700">
-                <th class="text-left py-3 px-4 font-semibold text-gray-900 dark:text-white">
+                <th scope="col" class="text-left py-3 px-4 font-semibold text-gray-900 dark:text-white">
                   Functionalities
                 </th>
-                <th class="text-center py-3 px-4 font-semibold text-green-600 dark:text-green-400 w-32">
+                <th scope="col" class="text-center py-3 px-4 font-semibold text-green-600 dark:text-green-400 w-32">
                   Community
                 </th>
-                <th class="text-center py-3 px-4 font-semibold text-primary-600 dark:text-primary-400 w-32">
+                <th scope="col" class="text-center py-3 px-4 font-semibold text-primary-600 dark:text-primary-400 w-32">
                   Enterprise
                 </th>
               </tr>
@@ -177,26 +179,18 @@ const comparisonFeatures = [
                   {{ feature.name }}
                 </td>
                 <td class="py-3 px-4 text-center">
-                  <UIcon
-                    v-if="feature.community"
-                    name="i-lucide-check"
-                    class="w-5 h-5 text-green-500 mx-auto"
-                  />
-                  <span
-                    v-else
-                    class="text-gray-300 dark:text-gray-600"
-                  >—</span>
+                  <template v-if="feature.community">
+                    <UIcon name="i-lucide-check" class="w-5 h-5 text-green-500 mx-auto" aria-hidden="true" />
+                    <span class="sr-only">Available</span>
+                  </template>
+                  <span v-else class="text-gray-300 dark:text-gray-600" aria-label="Not available">—</span>
                 </td>
                 <td class="py-3 px-4 text-center">
-                  <UIcon
-                    v-if="feature.enterprise"
-                    name="i-lucide-check"
-                    class="w-5 h-5 text-primary-500 mx-auto"
-                  />
-                  <span
-                    v-else
-                    class="text-gray-300 dark:text-gray-600"
-                  >—</span>
+                  <template v-if="feature.enterprise">
+                    <UIcon name="i-lucide-check" class="w-5 h-5 text-primary-500 mx-auto" aria-hidden="true" />
+                    <span class="sr-only">Available</span>
+                  </template>
+                  <span v-else class="text-gray-300 dark:text-gray-600" aria-label="Not available">—</span>
                 </td>
               </tr>
             </tbody>

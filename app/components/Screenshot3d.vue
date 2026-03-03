@@ -1,6 +1,7 @@
 <template>
   <div
-    class="relative w-full h-[400px] bg-muted overflow-hidden flex justify-center"
+    class="screenshot3d-wrapper relative w-full h-[400px] bg-muted overflow-hidden flex justify-center"
+    aria-hidden="true"
   >
     <UMarquee
       reverse
@@ -16,7 +17,7 @@
         :src="toShowcaseSrc(img)"
         width="460"
         height="258"
-        :alt="`Showcase ${img}`"
+        alt=""
         class="aspect-video border border-default rounded-lg bg-white"
       >
     </UMarquee>
@@ -34,7 +35,7 @@
         :src="toShowcaseSrc(img)"
         width="460"
         height="258"
-        :alt="`Showcase ${img}`"
+        alt=""
         class="aspect-video border border-default rounded-lg bg-white"
       >
     </UMarquee>
@@ -53,7 +54,7 @@
         :src="toShowcaseSrc(img)"
         width="460"
         height="258"
-        :alt="`Showcase ${img}`"
+        alt=""
         class="aspect-video border border-default rounded-lg bg-white"
       >
     </UMarquee>
@@ -71,7 +72,7 @@
         :src="toShowcaseSrc(img)"
         width="460"
         height="258"
-        :alt="`Showcase ${img}`"
+        alt=""
         class="aspect-video border border-default rounded-lg bg-white"
       >
     </UMarquee>
@@ -119,3 +120,12 @@ const groups = computed(() => {
   return g
 })
 </script>
+
+<style>
+@media (prefers-reduced-motion: reduce) {
+  .screenshot3d-wrapper * {
+    animation-play-state: paused !important;
+    transition: none !important;
+  }
+}
+</style>

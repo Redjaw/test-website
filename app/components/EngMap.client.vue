@@ -1,5 +1,10 @@
 <template>
-  <div ref="mapEl" class="h-[460px] w-full" />
+  <div
+    ref="mapEl"
+    class="h-[460px] w-full"
+    role="application"
+    aria-label="Interactive map of ENG office locations in Europe"
+  />
 </template>
 
 <script setup lang="ts">

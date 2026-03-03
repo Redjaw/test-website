@@ -5,6 +5,7 @@ const mainFeatures = [
     icon: 'i-lucide-layout-dashboard',
     title: 'Interactive Dashboards',
     description: 'A dashboard in Knowage transforms data into visual insights, enabling real-time monitoring, analysis, and strategic decision-making.',
+    image: '',
     details: [
       'Combine data from multiple sources and datasets into a unified analysis environment',
       'Wide range of widgets: charts, tables, pivot, text, images, filters, maps, and custom code',
@@ -17,6 +18,7 @@ const mainFeatures = [
     icon: 'i-lucide-bot',
     title: 'Virtual Assistant',
     description: 'An intelligent, conversational interface designed to help users interact seamlessly with the KNOWAGE suite.',
+    image: '',
     details: [
       'Real-time support by answering questions',
       'Dashboard navigation assistance',
@@ -28,6 +30,7 @@ const mainFeatures = [
     icon: 'i-lucide-bar-chart-3',
     title: 'Advanced Data Visualization',
     description: 'Modern data analysis requires flexibility and openness to custom code.',
+    image: '',
     details: [
       'Wide range of open widgets for advanced components',
       'Use HTML, third-party libraries, or Python code',
@@ -100,8 +103,15 @@ const mainFeatures = [
       'Empowers individual users to freely explore their own data space',
       'Bi-modal approach and fast prototyping practices'
     ]
-  },
+  }
 ]
+
+const featuredItems = mainFeatures.slice(0, 3)
+const gridItems = mainFeatures.slice(3)
+
+const runtimeConfig = useRuntimeConfig()
+const base = runtimeConfig?.app?.baseURL ?? '/'
+const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
 </script>
 
 <template>
@@ -117,105 +127,93 @@ const mainFeatures = [
       :ui="{ container: 'flex flex-col lg:grid py-6 sm:py-8 lg:py-10 gap-16 sm:gap-y-24', title: 'text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-highlighted' }"
     />
 
-    <!-- Feature Sections -->
-    <template
-      v-for="(feature, index) in mainFeatures"
-      :key="feature.id"
-    >
-      <!-- First 3 features: two-column layout (50/50) with alternating order -->
-      <template v-if="index < 3">
-        <UPageSection
-          :id="feature.id"
-          :ui="{ container: 'py-8 sm:py-10' }"
-        >
-          <div :class="['grid grid-cols-2 gap-8', index % 2 === 1 && 'grid-cols-reverse']">
-            <!-- Content column: title, description, details -->
-            <div :class="{ 'order-2': index % 2 === 1 }">
-              <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                {{ feature.title }}
-              </h2>
-              <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                {{ feature.description }}
-              </p>
-              <div>
-                <div class="flex items-center gap-3 mb-4">
-                  <div class="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg">
-                    <UIcon
-                      :name="feature.icon"
-                      class="w-7 h-7 text-primary-600 dark:text-primary-400"
-                    />
-                  </div>
-                  <h3 class="text-xl font-semibold">
-                    Key Capabilities
-                  </h3>
-                </div>
-                <ul class="space-y-2">
-                  <li
-                    v-for="detail in feature.details"
-                    :key="detail"
-                    class="flex items-start gap-2"
-                  >
-                    <UIcon
-                      name="i-lucide-check"
-                      class="w-5 h-5 text-green-500 mt-0.5 shrink-0"
-                    />
-                    <span class="text-gray-600 dark:text-gray-300">{{ detail }}</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Image column -->
-            <div class="flex items-center justify-center" :class="{ 'order-1': index % 2 === 1 }">
-              <div class="w-full h-96 bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center">
-                <slot :name="`image-${feature.id}`">
-                  <span class="text-gray-500 dark:text-gray-400">Image slot for {{ feature.title }}</span>
-                </slot>
-              </div>
+    <!-- First 3 features: horizontal layout with image -->
+    <UContainer class="py-12 sm:py-16 space-y-16">
+      <div
+        v-for="(feature, index) in featuredItems"
+        :id="feature.id"
+        :key="feature.id"
+        class="flex flex-col lg:flex-row items-center gap-10"
+        :class="{ 'lg:flex-row-reverse': index % 2 === 1 }"
+      >
+        <!-- Image -->
+        <div class="w-full lg:w-1/2 shrink-0">
+          <div class="aspect-[16/9] rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800">
+            <img
+              v-if="feature.image"
+              :src="`${baseNormalized}${feature.image}`"
+              :alt="feature.title"
+              class="w-full h-full object-cover"
+            >
+            <div
+              v-else
+              class="w-full h-full bg-gradient-to-br from-primary-50 via-white to-primary-100 dark:from-gray-900 dark:via-primary-950 dark:to-gray-900 flex items-center justify-center"
+            >
+              <UIcon :name="feature.icon" class="size-20 text-primary-200 dark:text-primary-800" />
             </div>
           </div>
-        </UPageSection>
-      </template>
+        </div>
 
-      <!-- Other features: original layout -->
-      <template v-else>
-        <UPageSection
+        <!-- Content -->
+        <div class="w-full lg:w-1/2 flex flex-col gap-5">
+          <div class="size-12 rounded-lg bg-primary-50 dark:bg-primary-950 flex items-center justify-center">
+            <UIcon :name="feature.icon" class="size-6 text-primary-500 dark:text-primary-400" />
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              {{ feature.title }}
+            </h2>
+            <p class="text-base text-gray-500 dark:text-gray-400 leading-relaxed">
+              {{ feature.description }}
+            </p>
+          </div>
+          <ul class="space-y-2.5 pt-4 border-t border-gray-100 dark:border-gray-800">
+            <li
+              v-for="detail in feature.details"
+              :key="detail"
+              class="flex items-start gap-2.5"
+            >
+              <UIcon name="i-lucide-check" class="size-4 text-primary-500 mt-0.5 shrink-0" />
+              <span class="text-sm text-gray-600 dark:text-gray-300">{{ detail }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </UContainer>
+
+    <!-- Remaining 6 features: compact card grid -->
+    <UContainer class="pb-12 sm:pb-16">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          v-for="feature in gridItems"
           :id="feature.id"
-          :title="feature.title"
-          :description="feature.description"
-          orientation="horizontal"
-          :reverse="index % 2 === 1"
-          :ui="{ container: 'py-8 sm:py-10' }"
+          :key="feature.id"
+          class="group flex flex-col gap-5 p-6 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/40 hover:border-primary-400 dark:hover:border-primary-600 hover:shadow-lg transition-all duration-200"
         >
-          <UCard :ui="{ body: 'p-5' }">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg">
-                <UIcon
-                  :name="feature.icon"
-                  class="w-7 h-7 text-primary-600 dark:text-primary-400"
-                />
-              </div>
-              <h3 class="text-xl font-semibold">
-                Key Capabilities
-              </h3>
-            </div>
-            <ul class="space-y-2">
-              <li
-                v-for="detail in feature.details"
-                :key="detail"
-                class="flex items-start gap-2"
-              >
-                <UIcon
-                  name="i-lucide-check"
-                  class="w-5 h-5 text-green-500 mt-0.5 shrink-0"
-                />
-                <span class="text-gray-600 dark:text-gray-300">{{ detail }}</span>
-              </li>
-            </ul>
-          </UCard>
-        </UPageSection>
-      </template>
-    </template>
+          <div class="size-12 rounded-lg bg-primary-50 dark:bg-primary-950 flex items-center justify-center shrink-0 group-hover:bg-primary-100 dark:group-hover:bg-primary-900 transition-colors duration-200">
+            <UIcon :name="feature.icon" class="size-6 text-primary-500 dark:text-primary-400" />
+          </div>
+          <div>
+            <h2 class="text-base font-semibold text-gray-900 dark:text-white mb-1.5">
+              {{ feature.title }}
+            </h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+              {{ feature.description }}
+            </p>
+          </div>
+          <ul class="mt-auto space-y-2 pt-4 border-t border-gray-100 dark:border-gray-800">
+            <li
+              v-for="detail in feature.details"
+              :key="detail"
+              class="flex items-start gap-2"
+            >
+              <UIcon name="i-lucide-check" class="size-4 text-primary-500 mt-0.5 shrink-0" />
+              <span class="text-sm text-gray-600 dark:text-gray-300">{{ detail }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </UContainer>
 
     <!-- CTA -->
     <UPageSection
@@ -230,6 +228,7 @@ const mainFeatures = [
           size="xl"
           icon="i-lucide-play-circle"
           label="Get Started"
+          aria-label="Get Started (opens in new tab)"
         />
         <UButton
           to="/editions"

@@ -6,7 +6,7 @@
           href="https://www.eng.it"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="ENG - Ingegneria Informatica"
+          aria-label="ENG - Ingegneria Informatica (opens in new tab)"
           class="text-gray-900 dark:text-white opacity-80 hover:opacity-100 transition-opacity"
         >
           <svg
@@ -48,7 +48,7 @@
           to="https://github.com/KnowageLabs/Knowage-Server"
           target="_blank"
           icon="i-simple-icons-github"
-          aria-label="GitHub"
+          aria-label="GitHub (opens in new tab)"
           color="neutral"
           variant="ghost"
         />
