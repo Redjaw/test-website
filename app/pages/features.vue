@@ -2,7 +2,7 @@
 const mainFeatures = [
   {
     id: 'dashboards',
-    icon: 'i-lucide-layout-dashboard',
+    icon: 'material-symbols:dashboard',
     title: 'Interactive Dashboards',
     description: 'A dashboard in Knowage transforms data into visual insights, enabling real-time monitoring, analysis, and strategic decision-making.',
     image: '/img/features/dashboard.png',
@@ -15,7 +15,7 @@ const mainFeatures = [
   },
   {
     id: 'assistant',
-    icon: 'i-lucide-bot',
+    icon: 'material-symbols:smart-toy',
     title: 'Virtual Assistant',
     description: 'An intelligent, conversational interface designed to help users interact seamlessly with the KNOWAGE suite.',
     image: '/img/features/assistant.png',
@@ -27,7 +27,7 @@ const mainFeatures = [
   },
   {
     id: 'dataviz',
-    icon: 'i-lucide-bar-chart-3',
+    icon: 'material-symbols:bar-chart',
     title: 'Advanced Data Visualization',
     description: 'Modern data analysis requires flexibility and openness to custom code.',
     image: '/img/features/forecast.png',
@@ -39,7 +39,7 @@ const mainFeatures = [
   },
   {
     id: 'reporting',
-    icon: 'i-lucide-file-text',
+    icon: 'material-symbols:description',
     title: 'Reporting',
     description: 'Knowage reporting enables structured, customizable documents from data, supporting analysis, distribution, and decision-making.',
     details: [
@@ -51,7 +51,7 @@ const mainFeatures = [
   },
   {
     id: 'dossier',
-    icon: 'i-lucide-folder-open',
+    icon: 'material-symbols:folder-open',
     title: 'Automatic Dossier',
     description: 'Compile reports into a single Word or PowerPoint document for meetings or publications.',
     details: [
@@ -62,7 +62,7 @@ const mainFeatures = [
   },
   {
     id: 'qbe',
-    icon: 'i-lucide-search',
+    icon: 'material-symbols:search',
     title: 'Visual Data Exploration (QbE)',
     description: 'Query by Example enables intuitive and unrestricted data exploration within the data space.',
     details: [
@@ -73,7 +73,7 @@ const mainFeatures = [
   },
   {
     id: 'selfservice',
-    icon: 'i-lucide-user-cog',
+    icon: 'material-symbols:manage-accounts',
     title: 'Self-Service & Ad-Hoc Reporting',
     description: 'KNOWAGE fully supports self-service data access and ad-hoc reporting, balancing user autonomy with robust security.',
     details: [
@@ -84,7 +84,7 @@ const mainFeatures = [
   },
   {
     id: 'kpi',
-    icon: 'i-lucide-gauge',
+    icon: 'material-symbols:speed',
     title: 'Performance Management',
     description: 'Define Key Performance Indicators (KPIs) with threshold settings, scheduled evaluations, and native publication.',
     details: [
@@ -95,7 +95,7 @@ const mainFeatures = [
   },
   {
     id: 'multitenant',
-    icon: 'i-lucide-building',
+    icon: 'material-symbols:domain',
     title: 'Multi-tenant',
     description: 'KNOWAGE supports IT teams in managing complex enterprise environments with multitenancy and rich metadata structures.',
     details: [
@@ -116,10 +116,10 @@ const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
 
 <template>
   <div>
-    <div class="relative">
+    <!-- <div class="relative">
       <Screenshot3d />
       <div class="absolute inset-0 bg-linear-to-b from-transparent via-transparent" />
-    </div>
+    </div> -->
 
     <UPageHero
       title="Product Features"
@@ -173,7 +173,7 @@ const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
               :key="detail"
               class="flex items-start gap-2.5"
             >
-              <UIcon name="i-lucide-check" class="size-4 text-primary-500 mt-0.5 shrink-0" />
+              <UIcon name="material-symbols:check" class="size-4 text-primary-500 mt-0.5 shrink-0" />
               <span class="text-sm text-gray-600 dark:text-gray-300">{{ detail }}</span>
             </li>
           </ul>
@@ -207,7 +207,7 @@ const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
               :key="detail"
               class="flex items-start gap-2"
             >
-              <UIcon name="i-lucide-check" class="size-4 text-primary-500 mt-0.5 shrink-0" />
+              <UIcon name="material-symbols:check" class="size-4 text-primary-500 mt-0.5 shrink-0" />
               <span class="text-sm text-gray-600 dark:text-gray-300">{{ detail }}</span>
             </li>
           </ul>
@@ -226,7 +226,7 @@ const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
           to="https://knowage-suite.readthedocs.io/en/9.0/chapter_5/index.html"
           target="_blank"
           size="xl"
-          icon="i-lucide-play-circle"
+          icon="material-symbols:play-circle"
           label="Get Started"
           aria-label="Get Started (opens in new tab)"
         />
@@ -236,7 +236,7 @@ const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
           color="neutral"
           variant="subtle"
           label="View Editions"
-          trailing-icon="i-lucide-arrow-right"
+          trailing-icon="material-symbols:arrow-forward"
         />
       </div>
     </UPageSection>

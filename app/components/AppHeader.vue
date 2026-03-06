@@ -23,9 +23,8 @@ const items = computed(() => [
   <UHeader>
     <template #left>
       <NuxtLink to="/" aria-label="Knowage — Home">
-        <AppLogo class="w-auto h-6 shrink-0" aria-hidden="true" />
+        <AppLogo class="h-12 w-auto shrink-0" aria-hidden="true" />
       </NuxtLink>
-      <TemplateMenu />
     </template>
 
     <UNavigationMenu

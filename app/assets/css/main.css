@@ -2,27 +2,35 @@
 @import "@nuxt/ui";
 
 @theme static {
-  --font-sans: 'Public Sans', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
 
-  --color-brand-50: #fef2f2;
-  --color-brand-100: #fee2e2;
-  --color-brand-200: #fecaca;
-  --color-brand-300: #fca5a5;
-  --color-brand-400: #f87171;
-  --color-brand-500: #ef4444;
-  --color-brand-600: #dc2626;
-  --color-brand-700: #b91c1c;
-  --color-brand-800: #991b1b;
-  --color-brand-900: #7f1d1d;
-  --color-brand-950: #450a0a;
+  --color-brand-50: #fff0fa;
+  --color-brand-100: #fcdcf3;
+  --color-brand-200: #f8bae7;
+  --color-brand-300: #f089d1;
+  --color-brand-400: #e453b5;
+  --color-brand-500: #d72b9b;
+  --color-brand-600: #c51b88;
+  --color-brand-700: #a11772;
+  --color-brand-800: #781255;
+  --color-brand-900: #4f0c38;
+  --color-brand-950: #300722;
 }
 
 :root {
-  --ui-bg: var(--ui-color-neutral-50);
+  --ui-bg: #fcfcfc;
 }
 
 .dark {
-  --ui-bg: var(--color-slate-950);
+  --ui-bg: #090909;
+}
+
+body {
+  color: #090909;
+}
+
+.dark body {
+  color: #fcfcfc;
 }
 
 /* Reduce UPageSection vertical padding - force override */

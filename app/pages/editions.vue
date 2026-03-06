@@ -53,7 +53,7 @@ const comparisonFeatures = [
             <div class="flex items-center gap-3">
               <div class="p-3 bg-green-100 dark:bg-green-900 rounded-lg">
                 <UIcon
-                  name="i-lucide-users"
+                  name="material-symbols:group"
                   class="w-8 h-8 text-green-600 dark:text-green-400"
                 />
               </div>
@@ -109,7 +109,7 @@ const comparisonFeatures = [
             <div class="flex items-center gap-3">
               <div class="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg">
                 <UIcon
-                  name="i-lucide-building-2"
+                  name="material-symbols:domain"
                   class="w-8 h-8 text-primary-600 dark:text-primary-400"
                 />
               </div>
@@ -139,7 +139,7 @@ const comparisonFeatures = [
           <template #footer>
             <UButton
               to="/contact"
-              icon="i-lucide-mail"
+              icon="material-symbols:mail"
               label="Contact Sales"
             />
           </template>
@@ -180,14 +180,14 @@ const comparisonFeatures = [
                 </td>
                 <td class="py-3 px-4 text-center">
                   <template v-if="feature.community">
-                    <UIcon name="i-lucide-check" class="w-5 h-5 text-green-500 mx-auto" aria-hidden="true" />
+                    <UIcon name="material-symbols:check" class="w-5 h-5 text-green-500 mx-auto" aria-hidden="true" />
                     <span class="sr-only">Available</span>
                   </template>
                   <span v-else class="text-gray-300 dark:text-gray-600" aria-label="Not available">—</span>
                 </td>
                 <td class="py-3 px-4 text-center">
                   <template v-if="feature.enterprise">
-                    <UIcon name="i-lucide-check" class="w-5 h-5 text-primary-500 mx-auto" aria-hidden="true" />
+                    <UIcon name="material-symbols:check" class="w-5 h-5 text-primary-500 mx-auto" aria-hidden="true" />
                     <span class="sr-only">Available</span>
                   </template>
                   <span v-else class="text-gray-300 dark:text-gray-600" aria-label="Not available">—</span>

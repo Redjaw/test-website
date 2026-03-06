@@ -8,11 +8,14 @@
       <div class="absolute inset-0 bg-white/80 dark:bg-gray-900/80" />
       <div class="relative">
         <UPageHero
-          title="KNOWAGE"
           description="The open source, secure and reliable solution for advanced data analytics and business intelligence. Aggregate data from heterogeneous systems, visualize insights on any device through charts, maps, KPIs and interactive dashboards — and make truly data-driven decisions."
           headline="New release 9.0"
           :links="links as any"
-        />
+        >
+          <template #title>
+            <AppLogo class="h-24 w-auto mx-auto" />
+          </template>
+        </UPageHero>
       </div>
     </div>
 
@@ -35,7 +38,7 @@
       reverse
     >
       <img
-        :src="`${baseNormalized}/img/home/editions.jpg`"
+        :src="`${baseNormalized}/img/home/editions.png`"
         alt="Illustration"
         class="w-full rounded-lg"
       >
@@ -80,7 +83,7 @@ const features = [
     description: 'Build your analysis in autonomy, explore and organize your own data space thanks to advanced self-service features.'
   },
   {
-    icon: 'mdi:inbox-multiple',
+    icon: 'material-symbols:inbox',
     title: 'Multitenant',
     description: 'Activate different virtual instances to support multi-company, multi-department or multi-user scenarios.'
   },
@@ -95,7 +98,7 @@ const features = [
     description: 'Solid governance ensures your data never leaves the organizational perimeter, with full security, traceability and granular access control.'
   },
   {
-    icon: 'i-lucide-code-2',
+    icon: 'material-symbols:code',
     title: 'Open Source',
     description: 'Fully open source and community-driven, Knowage gives you complete freedom to inspect, extend and contribute — with no vendor lock-in.'
   }
@@ -119,20 +122,20 @@ const links = ref<HeroLink[]>([
   {
     label: 'Get started',
     to: 'https://knowage-suite.readthedocs.io/en/9.0/chapter_5/index.html',
-    icon: 'i-lucide-square-play'
+    icon: 'material-symbols:play-circle'
   },
   {
     label: 'Release 9',
     to: '/v9',
     color: 'primary',
-    icon: 'i-lucide-rocket'
+    icon: 'material-symbols:rocket-launch'
   },
   {
     label: 'Learn more',
     to: '/features',
     color: 'neutral',
     variant: 'subtle',
-    trailingIcon: 'i-lucide-arrow-right'
+    trailingIcon: 'material-symbols:arrow-forward'
   }
 ])
 </script>
