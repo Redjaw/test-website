@@ -23,7 +23,7 @@ const items = computed(() => [
   <UHeader>
     <template #left>
       <NuxtLink to="/" aria-label="Knowage — Home">
-        <AppLogo class="h-8 w-auto shrink-0" aria-hidden="true" />
+        <AppLogo class="h-10 w-auto shrink-0" aria-hidden="true" />
       </NuxtLink>
     </template>
 
