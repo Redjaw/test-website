@@ -2,7 +2,7 @@
 const mainFeatures = [
   {
     id: 'dashboards',
-    icon: 'material-symbols:dashboard',
+    icon: 'material-symbols:dashboard-outline',
     title: 'Interactive Dashboards',
     description: 'A dashboard in Knowage transforms data into visual insights, enabling real-time monitoring, analysis, and strategic decision-making.',
     image: '/img/features/dashboard.png',
@@ -15,7 +15,7 @@ const mainFeatures = [
   },
   {
     id: 'assistant',
-    icon: 'material-symbols:smart-toy',
+    icon: 'material-symbols:smart-toy-outline',
     title: 'Virtual Assistant',
     description: 'An intelligent, conversational interface designed to help users interact seamlessly with the KNOWAGE suite.',
     image: '/img/features/assistant.png',
@@ -27,7 +27,7 @@ const mainFeatures = [
   },
   {
     id: 'dataviz',
-    icon: 'material-symbols:bar-chart',
+    icon: 'material-symbols:insert-chart-outline',
     title: 'Advanced Data Visualization',
     description: 'Modern data analysis requires flexibility and openness to custom code.',
     image: '/img/features/forecast.png',
@@ -39,7 +39,7 @@ const mainFeatures = [
   },
   {
     id: 'reporting',
-    icon: 'material-symbols:description',
+    icon: 'material-symbols:description-outline',
     title: 'Reporting',
     description: 'Knowage reporting enables structured, customizable documents from data, supporting analysis, distribution, and decision-making.',
     details: [
@@ -51,7 +51,7 @@ const mainFeatures = [
   },
   {
     id: 'dossier',
-    icon: 'material-symbols:folder-open',
+    icon: 'material-symbols:folder-open-outline',
     title: 'Automatic Dossier',
     description: 'Compile reports into a single Word or PowerPoint document for meetings or publications.',
     details: [
@@ -73,7 +73,7 @@ const mainFeatures = [
   },
   {
     id: 'selfservice',
-    icon: 'material-symbols:manage-accounts',
+    icon: 'material-symbols:manage-accounts-outline',
     title: 'Self-Service & Ad-Hoc Reporting',
     description: 'KNOWAGE fully supports self-service data access and ad-hoc reporting, balancing user autonomy with robust security.',
     details: [
@@ -84,7 +84,7 @@ const mainFeatures = [
   },
   {
     id: 'kpi',
-    icon: 'material-symbols:speed',
+    icon: 'material-symbols:speed-outline',
     title: 'Performance Management',
     description: 'Define Key Performance Indicators (KPIs) with threshold settings, scheduled evaluations, and native publication.',
     details: [
@@ -226,7 +226,7 @@ const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
           to="https://knowage-suite.readthedocs.io/en/9.0/chapter_5/index.html"
           target="_blank"
           size="xl"
-          icon="material-symbols:play-circle"
+          icon="material-symbols:play-circle-outline"
           label="Get Started"
           aria-label="Get Started (opens in new tab)"
         />

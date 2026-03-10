@@ -53,7 +53,7 @@ const comparisonFeatures = [
             <div class="flex items-center gap-3">
               <div class="p-3 bg-green-100 dark:bg-green-900 rounded-lg">
                 <UIcon
-                  name="material-symbols:group"
+                  name="material-symbols:group-outline"
                   class="w-8 h-8 text-green-600 dark:text-green-400"
                 />
               </div>
@@ -139,7 +139,7 @@ const comparisonFeatures = [
           <template #footer>
             <UButton
               to="/contact"
-              icon="material-symbols:mail"
+              icon="material-symbols:mail-outline"
               label="Contact Sales"
             />
           </template>

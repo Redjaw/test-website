@@ -7,7 +7,7 @@
       title="Consultancy Services"
       description="Expert support to help you succeed with your Business Intelligence projects."
       :links="[
-        { label: 'Contact Us', to: '/contact', icon: 'material-symbols:mail' }
+        { label: 'Contact Us', to: '/contact', icon: 'material-symbols:mail-outline' }
       ]"
     />
 
@@ -19,7 +19,7 @@
             <div class="flex items-center gap-3">
               <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
                 <UIcon
-                  name="material-symbols:school"
+                  name="material-symbols:school-outline"
                   class="w-8 h-8 text-blue-600 dark:text-blue-400"
                 />
               </div>
@@ -44,7 +44,7 @@
           <template #footer>
             <div class="flex items-center gap-2 text-sm text-gray-500">
               <UIcon
-                name="material-symbols:workspace-premium"
+                name="material-symbols:workspace-premium-outline"
                 class="w-4 h-4"
               />
               <span>Certificate of completion included</span>
@@ -58,7 +58,7 @@
             <div class="flex items-center gap-3">
               <div class="p-3 bg-purple-100 dark:bg-purple-900 rounded-lg">
                 <UIcon
-                  name="material-symbols:lightbulb"
+                  name="material-symbols:lightbulb-outline"
                   class="w-8 h-8 text-purple-600 dark:text-purple-400"
                 />
               </div>
@@ -83,7 +83,7 @@
           <template #footer>
             <div class="flex items-center gap-2 text-sm text-gray-500">
               <UIcon
-                name="material-symbols:check-circle"
+                name="material-symbols:check-circle-outline"
                 class="w-4 h-4"
               />
               <span>Full project lifecycle support</span>
@@ -102,7 +102,7 @@
         <UButton
           to="/contact"
           size="xl"
-          icon="material-symbols:send"
+          icon="material-symbols:send-outline"
           label="Contact Us"
         />
       </div>

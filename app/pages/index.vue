@@ -63,12 +63,12 @@ const features = [
     description: 'Work on every Operating System, on premise or in the cloud. From desktop to mobile devices.'
   },
   {
-    icon: 'material-symbols:database',
+    icon: 'material-symbols:database-outline',
     title: 'Any Data',
     description: 'Combine data coming from RDBMS, big data, NoSQL, open data, Solr indexes, flat files and external data services.'
   },
   {
-    icon: 'material-symbols:cloud',
+    icon: 'material-symbols:cloud-outline',
     title: 'Cloud Ready',
     description: 'Usable in any Cloud environment in IaaS mode or find it in the major marketplaces.'
   },
@@ -83,7 +83,7 @@ const features = [
     description: 'Build your analysis in autonomy, explore and organize your own data space thanks to advanced self-service features.'
   },
   {
-    icon: 'material-symbols:inbox',
+    icon: 'material-symbols:inbox-outline',
     title: 'Multitenant',
     description: 'Activate different virtual instances to support multi-company, multi-department or multi-user scenarios.'
   },
@@ -93,12 +93,12 @@ const features = [
     description: 'An AI virtual assistant guides users through data exploration, answers questions and makes advanced analytics accessible to everyone — regardless of technical skills.'
   },
   {
-    icon: 'material-symbols:security',
+    icon: 'material-symbols:shield-outline',
     title: 'Data Security & Governance',
     description: 'Solid governance ensures your data never leaves the organizational perimeter, with full security, traceability and granular access control.'
   },
   {
-    icon: 'material-symbols:code',
+    icon: 'material-symbols:code-blocks-outline',
     title: 'Open Source',
     description: 'Fully open source and community-driven, Knowage gives you complete freedom to inspect, extend and contribute — with no vendor lock-in.'
   }
@@ -122,13 +122,13 @@ const links = ref<HeroLink[]>([
   {
     label: 'Get started',
     to: 'https://knowage-suite.readthedocs.io/en/9.0/chapter_5/index.html',
-    icon: 'material-symbols:play-circle'
+    icon: 'material-symbols:play-circle-outline'
   },
   {
     label: 'Release 9',
     to: '/v9',
     color: 'primary',
-    icon: 'material-symbols:rocket-launch'
+    icon: 'material-symbols:rocket-launch-outline'
   },
   {
     label: 'Learn more',

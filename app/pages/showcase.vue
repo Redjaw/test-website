@@ -116,7 +116,7 @@ useSeoMeta({
               </template>
               <template #date>
                 <div class="flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400">
-                  <UIcon name="material-symbols:location-on" class="w-4 h-4" />
+                  <UIcon name="material-symbols:location-on-outline" class="w-4 h-4" />
                   <span>{{ item.country }}</span>
                 </div>
               </template>
