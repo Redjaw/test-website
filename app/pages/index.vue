@@ -38,7 +38,7 @@
       reverse
     >
       <img
-        :src="`${baseNormalized}/img/home/editions.png`"
+        :src="`${baseNormalized}/img/home/editions.jpg`"
         alt="Illustration"
         class="w-full rounded-lg"
       >

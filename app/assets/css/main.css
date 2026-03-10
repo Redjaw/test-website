@@ -3,6 +3,7 @@
 
 @theme static {
   --font-sans: 'Poppins', sans-serif;
+  --font-weight-bold: 600;
 
   --color-brand-50: #fff0fa;
   --color-brand-100: #fcdcf3;

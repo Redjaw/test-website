@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "WebFetch(domain:www.eng.it)"
+      "WebFetch(domain:www.eng.it)",
+      "Bash(node:*)"
     ]
   }
 }
