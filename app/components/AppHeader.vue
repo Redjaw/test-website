@@ -1,8 +1,4 @@
 <script setup lang="ts">
-const runtimeConfig = useRuntimeConfig()
-const base = runtimeConfig?.app?.baseURL ?? '/'
-const baseNormalized = base.endsWith('/') ? base.slice(0, -1) : base
-
 const items = computed(() => [
   {
     label: 'Features',
@@ -27,8 +23,7 @@ const items = computed(() => [
   <UHeader>
     <template #left>
       <NuxtLink to="/" aria-label="Knowage — Home">
-        <img class="h-7 w-auto shrink-0 dark:hidden" :src="`${baseNormalized}/img/knowage-wordmark-light.svg`" alt="Knowage" />
-        <img class="h-7 w-auto shrink-0 hidden dark:block" :src="`${baseNormalized}/img/knowage-wordmark-dark.svg`" alt="Knowage" />
+        <AppLogo class="h-8 w-auto shrink-0" aria-hidden="true" />
       </NuxtLink>
     </template>
 

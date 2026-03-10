@@ -13,7 +13,8 @@
           :links="links as any"
         >
           <template #title>
-            <AppLogo class="h-24 w-auto mx-auto" />
+            <img class="h-24 w-auto mx-auto dark:hidden" :src="`${baseNormalized}/img/knowage-wordmark-light.svg`" alt="Knowage" />
+          <img class="h-24 w-auto mx-auto hidden dark:block" :src="`${baseNormalized}/img/knowage-wordmark-dark.svg`" alt="Knowage" />
           </template>
         </UPageHero>
       </div>
